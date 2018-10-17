@@ -74,3 +74,34 @@ span.mtwTranslatedWordh {
     color: rgba(209, 29, 29, 1.00);
     background-color: white;
 }
+
+.tags-rare {
+    height:20px;
+    top:10px;
+    right:40px;
+    position: absolute;
+    border:2px solid #FFEBEE;
+    border-radius:5px;
+}
+
+.tags-common {
+    height:20px;
+    top:10px;
+    right:40px;
+    position: absolute;
+    border:2px solid #F1F8E9;
+    border-radius:5px;
+}
+
+.tags-occasional {
+    height:20px;
+    top:10px;
+    right:40px;
+    position: absolute;
+    border:2px solid #FFFDE7;
+    border-radius:5px;
+}
+
+.countPage {
+    font-size:8px;
+}
