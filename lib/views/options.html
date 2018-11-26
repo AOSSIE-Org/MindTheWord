@@ -66,6 +66,9 @@
           <li>
             <a id="quiz-nav" href="#quiz" data-toggle="tab" data-translate="quiz" data-placement="right" title="Quiz that tests knowledge of learnt new language words so far!">Quiz</a>
           </li>
+          <li>
+            <a id="hovercard-nav" href="#hovercard" data-toggle="tab" data-translate="hovercard" data-placement="right" title="Demonstration of various buttons on Hovercard">Hovercard demonstration</a>
+          </li>
         </ul>
       </nav>
 
@@ -92,6 +95,9 @@
         </div>
         <div class="tab-pane" id="quiz">
           <ng-include src="'includes/quiz.html'" onload="opctrl.setup()"></ng-include>
+        </div>
+        <div class="tab-pane" id="hovercard">
+          <ng-include src="'includes/hovercard.html'" onload="opctrl.setup()"></ng-include>
         </div>
         <div class="tab-pane" id="contribute">
           <ng-include src="'includes/contribute.html'" onload="opctrl.setup()"></ng-include>
