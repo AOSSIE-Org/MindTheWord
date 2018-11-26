@@ -401,5 +401,18 @@
     },
     "restoreAllYourSettings": {
         "message": "Restore all your settings and keys from a file."
+    },
+    "hovercard": {  
+        "message": "Hovercard"
+    },
+    "demonstrationOfHovercard": {
+        "message" : "Demonstration of hovercard"
+    },
+    "aire": {
+        "message": "Aire"
+    },
+    "air": {
+        "message": "Air"
     }
+
 }
