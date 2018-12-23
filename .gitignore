@@ -6,3 +6,4 @@ lib/*.js
 videos/
 misc/
 .DS_Store
+.vscode/
