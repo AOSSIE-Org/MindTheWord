@@ -37,10 +37,6 @@
     transition: all 0.7s ease;
 }
 
-.hc-details {
-    background-color: black;
-}
-
 .mtwSpeak:hover {
     opacity: 1.0;
     -webkit-transition: all 0.7s ease;
