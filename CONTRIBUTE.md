@@ -39,5 +39,8 @@ gulp build
 This will generate a dist folder containing deployment code.
 
 Content Script: `mtw.js`
-
 Event Page (background script): `eventPage.js`
+
+**To submit Merge Request**
+
+The extension builds from the ```lib/``` folder. Please make changes in the ```lib/``` folder only while submitting the Merge Request. Any changes in the ```dist/``` folder are to be unstaged before submitting the Merge Request.
