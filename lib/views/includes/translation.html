@@ -11,6 +11,9 @@
     <button type="button" ng-click="opctrl.toggleOneWordTranslation()" ng-class="{'active': opctrl.oneWordTranslation}" class="btn btn-warning pull-right btn-xs" style="margin-right: 5px">
       <span class="glyphicon glyphicon-ok-sign" ng-show="opctrl.oneWordTranslation"></span> <span data-translate="oneWordPerSentence">One Word Per Sentence</span>
     </button>
+    <button type="button" ng-click="opctrl.toggleCommonWordsOnly()" ng-class="{'active': opctrl.useCommonWordsOnly}" ng-style="CommonButtonStyle" class="btn btn-warning pull-right btn-xs" style="margin-right: 5px">
+      <span class="glyphicon glyphicon-ok-sign" ng-show="opctrl.useCommonWordsOnly"></span> <span>Common Words Only</span>
+    </button>
   </div>
   <div ng-show="opctrl.patterns.length === 0" class="text-center">
     <br>
