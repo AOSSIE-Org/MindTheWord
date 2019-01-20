@@ -1,0 +1,117 @@
+<html ng-app="MTWOptions">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Mind the Word</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mind the Word">
+    <meta name="author" content="Bruno Woltzenlogel Paleo">
+
+    <script src="../options.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-tour.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap-tour.min.js"></script>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../styles/style.css"> <!-- Resource style -->
+    <script src="../assets/js/modernizr.js"></script> <!-- Modernizr -->
+  </head>
+
+  <body ng-controller="OptionCtrl as opctrl">
+      <header class="cd-main-header">
+         
+          <a class="cd-logo" href="https://gitlab.com/aossie/MindTheWord">
+            <img alt="Brand" src="../assets/img/22.png">
+          </a>
+          <a class="cd-logo" href="https://gitlab.com/aossie/MindTheWord" data-translate='appName'><b><h2 style="color:#ffffff;">Mind The Word</h2></b></a>
+        <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+
+       <nav class="cd-nav">
+        <ul class="cd-top-nav">
+            <li>
+                <a id="statistics-nav" href="#statistics" data-toggle="tab" data-translate="statistics">Statistics</a>
+            </li>
+            <li>
+                <a id="contribute-nav" href="#contribute" data-toggle="tab" data-translate="contribute">Contribute</a>
+            </li>
+            <li>
+                <a id = "mtwTakeTour" href="#">Take Tour</a>
+            </li>          
+        </ul>
+       </nav>
+      </header>
+
+    <main class="cd-main-content">
+     <nav class="cd-side-nav">
+        <ul>
+          <li class="active">
+            <a id="translation-settings-nav" href="#translation-settings" data-toggle="tab" data-translate="translation" data-placement="right" title="Language Translation Services">Translation</a>
+          </li>
+          <li>
+            <a id="blacklisting-nav" href="#blacklisting" data-toggle="tab" data-translate="blacklist" data-placement="right" title="Blacklist Websites, Blacklist Words, Automatic Blacklisting">Blacklist</a>
+          </li>
+          <li>
+            <a id="learning-nav" href="#learning" data-toggle="tab" data-translate="learning" data-placement="right" title="Saved Translations, Difficulty Buckets, Learnt words">Learning</a>
+          </li>
+          <li>
+            <a id="advanced-settings-nav" href="#advanced-settings" data-toggle="tab" data-translate="advanced" data-placement="right" title="Color settings, Word configuration, Playback settings">Advanced</a>
+          </li>
+          <li>
+            <a id="backup-nav" href="#backup" data-toggle="tab" data-translate="backup" data-placement="right" title="Backup & Restore">Backup</a>
+          </li>
+          <li>
+            <a id="quiz-nav" href="#quiz" data-toggle="tab" data-translate="quiz" data-placement="right" title="Quiz that tests knowledge of learnt new language words so far!">Quiz</a>
+          </li>
+        </ul>
+      </nav>
+
+    
+    <div class="content-wrapper">
+      <div class="tab-content">
+        <div class="tab-pane active" id="translation-settings">
+          <ng-include src="'includes/translation.html'" onload="opctrl.setup()"></ng-include>
+        </div>
+        <div class="tab-pane" id="blacklisting">
+          <ng-include src="'includes/blacklist.html'" onload="opctrl.setup()"></ng-include>
+        </div>
+        <div class="tab-pane" id="learning">
+          <ng-include src="'includes/learning.html'" onload="opctrl.setup()"></ng-include>
+        </div>
+        <div class="tab-pane" id="advanced-settings">
+          <ng-include src="'includes/advanced.html'" onload="opctrl.setup()" onload="opctrl.setup()"></ng-include>
+        </div>
+        <div class="tab-pane" id="backup">
+          <ng-include src="'includes/backup.html'" onload="opctrl.setup()"></ng-include>
+        </div>
+        <div class="tab-pane" id="statistics">
+          <ng-include src="'includes/stats.html'" onload="opctrl.setup()"></ng-include>
+        </div>
+        <div class="tab-pane" id="quiz">
+          <ng-include src="'includes/quiz.html'" onload="opctrl.setup()"></ng-include>
+        </div>
+        <div class="tab-pane" id="contribute">
+          <ng-include src="'includes/contribute.html'" onload="opctrl.setup()"></ng-include>
+        </div>
+        <div class="tab-pane" id="troubleshooting">
+          <ng-include src="'includes/troubleshooting.html'" onload="opctrl.setup()"></ng-include>
+        </div>
+      </div>
+      <div id="status" class="fixed-bottom"></div>
+    </div>
+    </main>
+    
+  <ng-include src="'includes/footer.html'"></ng-include>
+  <script>
+   $(document).ready(function(){
+      $('[data-toggle="tab"]').tooltip();   
+   });
+  </script>
+  <script src="../assets/js/jquery.menu-aim.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/tour.js"></script>
+  </body>
+</html>
