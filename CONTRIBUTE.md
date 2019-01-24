@@ -18,7 +18,14 @@ LINUX/UNIX : Run the commands as 'super user'/'root'
 WINDOWS : Run cmd prompt as Administrator
 
 
-Install the extension in Chrome as an unpacked extension. Install the folder which has `manifest.json`
+**Install the extension in Chrome as an unpacked extension**
+
+Extensions can be loaded in unpacked mode by following the following steps:
+
+1) Visit chrome://extensions
+2) Enable Developer mode by ticking the checkbox in the upper-right corner.
+3) Click on the "Load unpacked extension..." button.
+4) Select the `./MindTheWord/dist/` directory.
 
 **To start the chrome application**, run
 
