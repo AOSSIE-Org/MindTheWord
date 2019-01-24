@@ -125,3 +125,22 @@ span.mtwTranslatedWordh {
     font-size:12px;
     font-weight: bold;
 }
+
+.onPageQuiz-correct-icon {
+    height: 25px;
+    position: absolute;
+    right: 18px;
+    margin-top: -20px;
+}
+
+.onPageQuiz-wrong-icon {
+    height: 20px;
+    margin-top: -20px;
+    position: absolute;
+    right: 20px;
+}
+
+.onPageQuiz-default {
+    line-height: 1.8;
+    cursor: pointer;
+}
