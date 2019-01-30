@@ -3,7 +3,9 @@ var gulp = require('gulp'),
   jspm = require('gulp-jspm'),
   rename = require('gulp-rename'),
   runSequence = require('run-sequence'),
-  minify = require('gulp-minify');
+  minify = require('gulp-minify'),
+  eslint = require('gulp-eslint'),
+  gulpIf = require('gulp-if');
 
 gulp.task('default', function() {
   console.log('Please use the following gulp tasks: watch, clean, bundle, build');
@@ -93,4 +95,27 @@ gulp.task('local-build', function() {
   runSequence('clean',
     ['bundle-content', 'bundle-options', 'bundle-event',
     'bundle-popup']);
+});
+
+gulp.task('esLint',()=>{
+  gulp.src('lib/scripts/**/*.js')
+      .pipe(eslint())
+      .pipe(eslint.format())
+      .pipe(eslint.result(result => {
+        console.log(`ESLint result: ${result.filePath}`);
+        console.log(`# Messages: ${result.messages.length}`);
+        console.log(`# Warnings: ${result.warningCount}`);
+        console.log(`# Errors: ${result.errorCount}`);
+      }))
+      .pipe(eslint.failAfterError());
+})
+function isFixed(file) {
+  return file.eslint != null && file.eslint.fixed;
+}
+gulp.task('fix', function () {
+  return gulp.src('lib/scripts/**/*.js')
+      .pipe(eslint({fix:true}))
+      .pipe(eslint.format())
+      .pipe(gulpIf(isFixed, gulp.dest('lib/scripts/')))
+      .pipe(eslint.failAfterError());
 });
