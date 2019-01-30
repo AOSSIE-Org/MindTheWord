@@ -98,7 +98,7 @@ gulp.task('local-build', function() {
 });
 
 gulp.task('esLint',()=>{
-  gulp.src('lib/scripts/**/*.js')
+  gulp.src('./lib/scripts/**/*.js')
       .pipe(eslint())
       .pipe(eslint.format())
       .pipe(eslint.result(result => {
@@ -113,7 +113,7 @@ function isFixed(file) {
   return file.eslint != null && file.eslint.fixed;
 }
 gulp.task('fix', function () {
-  return gulp.src('lib/scripts/**/*.js')
+  return gulp.src('./lib/scripts/**/*.js')
       .pipe(eslint({fix:true}))
       .pipe(eslint.format())
       .pipe(gulpIf(isFixed, gulp.dest('lib/scripts/')))
