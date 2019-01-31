@@ -5,9 +5,7 @@ var gulp = require('gulp'),
   runSequence = require('run-sequence'),
   minify = require('gulp-minify'),
   eslint = require('gulp-eslint'),
-  gulpIf = require('gulp-if'),
-  imagemin = require('gulp-imagemin')
-  ;
+  gulpIf = require('gulp-if');
 
 gulp.task('default', function() {
   console.log('Please use the following gulp tasks: watch, clean, bundle, build');
@@ -120,9 +118,4 @@ gulp.task('fix', function () {
       .pipe(eslint.format())
       .pipe(gulpIf(isFixed, gulp.dest('lib/scripts/')))
       .pipe(eslint.failAfterError());
-});
-gulp.task('compress-images', () => {
-  gulp.src('lib/assets/img/*')
-     .pipe(imagemin())
-     .pipe(gulp.dest('dist/assets/img'))
 });
