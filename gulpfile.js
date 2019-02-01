@@ -89,7 +89,7 @@ gulp.task('copy-dist', function () {
 gulp.task('build', function() {
   runSequence('clean',
     ['bundle-content', 'bundle-options', 'bundle-event',
-    'bundle-popup'], 'minify', 'fix', 'compress-images', 'copy-dist');
+    'bundle-popup'], 'minify', 'esLint', 'compress-images', 'copy-dist');
 });
 
 
