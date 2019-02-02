@@ -109,7 +109,9 @@ gulp.task('esLint',()=>{
         console.log(`# Warnings: ${result.warningCount}`);
         console.log(`# Errors: ${result.errorCount}`);
       }))
-      .pipe(eslint.failAfterError());
+      .pipe(eslint.failAfterError())
+      .on('error', function(err) {
+        console.log("Run 'gulp-fix' in terminal to fix these errors"); });
 })
 function isFixed(file) {
   return file.eslint != null && file.eslint.fixed;
