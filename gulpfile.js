@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
   del = require('del'),
   jspm = require('gulp-jspm'),
   rename = require('gulp-rename'),
@@ -6,8 +6,7 @@ var gulp = require('gulp'),
   minify = require('gulp-minify'),
   eslint = require('gulp-eslint'),
   gulpIf = require('gulp-if'),
-  imagemin = require('gulp-imagemin')
-  ;
+  imagemin = require('gulp-imagemin');
 
 gulp.task('default', function() {
   console.log('Please use the following gulp tasks: watch, clean, bundle, build');
@@ -62,7 +61,7 @@ gulp.task('watch', ['bundle-options', 'bundle-popup', 'bundle-content', 'bundle-
   gulp.watch('./lib/scripts/eventPage.js', ['bundle-event']);
   gulp.watch('./lib/scripts/services/*.js', ['bundle-content', 'bundle-event']);
   gulp.watch('./lib/scripts/utils/defaultStorage.js', ['bundle-options','bundle-event']);
-  
+
 });
 
 gulp.task('minify', function () {
@@ -89,38 +88,41 @@ gulp.task('copy-dist', function () {
 gulp.task('build', function() {
   runSequence('clean', 'esLint', 'compress-images',
     ['bundle-content', 'bundle-options', 'bundle-event',
-    'bundle-popup'], 'minify', 'copy-dist');
+      'bundle-popup'], 'minify', 'copy-dist');
 });
 
 
 gulp.task('local-build', function() {
   runSequence('clean',
     ['bundle-content', 'bundle-options', 'bundle-event',
-    'bundle-popup']);
+      'bundle-popup']);
 });
 
-gulp.task('esLint',()=>{
+gulp.task('esLint',() => {
   gulp.src('./lib/scripts/**/*.js')
-      .pipe(eslint())
-      .pipe(eslint.format())
-      .pipe(eslint.failAfterError())
-      .on('error', function(err) {
-        console.log("Run 'gulp-fix' in terminal to fix these errors"); 
-        process.exit()
-      });
-})
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+    .on('error', function(err) {
+      console.log('Run "gulp-fix" in terminal to fix these errors');
+      process.exit();
+    });
+});
+
 function isFixed(file) {
-  return file.eslint != null && file.eslint.fixed;
+  return file.eslint !== null && file.eslint.fixed;
 }
+
 gulp.task('fix', function () {
   return gulp.src('./lib/scripts/**/*.js')
-      .pipe(eslint({fix:true}))
-      .pipe(eslint.format())
-      .pipe(gulpIf(isFixed, gulp.dest('lib/scripts/')))
-      .pipe(eslint.failAfterError());
+    .pipe(eslint({ fix: true }))
+    .pipe(eslint.format())
+    .pipe(gulpIf(isFixed, gulp.dest('lib/scripts/')))
+    .pipe(eslint.failAfterError());
 });
+
 gulp.task('compress-images', () => {
   gulp.src('lib/assets/img/*')
-     .pipe(imagemin())
-     .pipe(gulp.dest('dist/assets/img'))
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/assets/img'));
 });
