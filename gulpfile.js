@@ -87,9 +87,9 @@ gulp.task('copy-dist', function () {
 });
 
 gulp.task('build', function() {
-  runSequence('clean',
+  runSequence('clean', 'esLint', 'compress-images',
     ['bundle-content', 'bundle-options', 'bundle-event',
-    'bundle-popup'], 'minify', 'esLint', 'compress-images', 'copy-dist');
+    'bundle-popup'], 'minify', 'copy-dist');
 });
 
 
@@ -103,15 +103,11 @@ gulp.task('esLint',()=>{
   gulp.src('./lib/scripts/**/*.js')
       .pipe(eslint())
       .pipe(eslint.format())
-      .pipe(eslint.result(result => {
-        console.log(`ESLint result: ${result.filePath}`);
-        console.log(`# Messages: ${result.messages.length}`);
-        console.log(`# Warnings: ${result.warningCount}`);
-        console.log(`# Errors: ${result.errorCount}`);
-      }))
       .pipe(eslint.failAfterError())
       .on('error', function(err) {
-        console.log("Run 'gulp-fix' in terminal to fix these errors"); });
+        console.log("Run 'gulp-fix' in terminal to fix these errors"); 
+        process.exit()
+      });
 })
 function isFixed(file) {
   return file.eslint != null && file.eslint.fixed;
