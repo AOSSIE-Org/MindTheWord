@@ -86,34 +86,29 @@
           </span>
         </div>
       </div>
-      <table class="table table-list">
-        <thead>
-          <tr>
-            <th><span data-translate="original">Original</span></th>
-            <th><span data-translate="translated">Translated</span></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="translation in opctrl.userDefinedTranslationList | startFrom : opctrl.userDefinedTranslationPage*4 | limitTo : 4">
-            <td>{{translation[0]}}</td>
-            <td>{{translation[1]}}</td>
-            <td>
-              <span class="pull-right">
-                <button class="btn btn-warning" ng-click="opctrl.removeUserDefinedTranslation(translation[0])">
-                  <span class="glyphicon glyphicon-trash"></span>
-                </button>
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="text-center" style="bottom: 0">
-        <ul class="pagination">
-          <li ng-repeat="x in opctrl.range(opctrl.userDefinedTranslationList.length) track by $index" class="pointer" ng-class="{'active': opctrl.userDefinedTranslationPage === $index}">
-            <a ng-click="opctrl.userDefinedTranslationPage = $index">{{$index + 1}}</a>
-          </li>
-        </ul>
+      <div style="height: 300px; overflow: scroll;">
+        <table class="table table-list">
+          <thead>
+            <tr>
+              <th><span data-translate="original">Original</span></th>
+              <th><span data-translate="translated">Translated</span></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr lazy-scroll="paginationFuntion()" lazy-scroll-trigger="80" ng-repeat="translation in opctrl.userDefinedTranslationList">
+              <td>{{translation[0]}}</td>
+              <td>{{translation[1]}}</td>
+              <td>
+                <span class="pull-right">
+                  <button class="btn btn-warning" ng-click="opctrl.removeUserDefinedTranslation(translation[0])">
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </button>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
