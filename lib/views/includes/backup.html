@@ -4,26 +4,27 @@
       <div class="panel-heading" data-translate="backup">
         Backup
       </div>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <span class="pull-right">
-            <button class="btn btn-success" ng-click="opctrl.backupAll()">
-              Backup
-            </button>
-          </span>
-          <h5 class="list-group-item-heading"><strong data-translate="backupConfiguration">Backup Configuration</strong></h5>
-          <p class="list-group-item-text" data-translate="backupAll">Backup all your settings and keys in a file.</p>
-        </li>
-        <li class="list-group-item">
-          <span class="pull-right">
-            <button class="btn btn-success" ng-click="opctrl.backupKeys()">
-              <span data-translate="backupButton">Backup</span>
-            </button>
-          </span>
-          <h5 class="list-group-item-heading"><strong data-translate="backupKeys">Backup Keys</strong></h5>
-          <p class="list-group-item-text" data-translate="backupAllKeysInAFile">Backup all your keys in a file.</p>
-        </li>
-      </ul>
+      <div>
+        <div style="padding: 20px 20px 50px 20px;">
+          <div style="margin: 10px;">
+            <input type="checkbox" name="allSettings" id="backup-allSettings" ng-model="allSettings" > All your settings and keys in a file <br>
+          </div>
+          <div style="margin: 10px;">
+            <input type="checkbox" name="allKeys" id="backup-allKeys" ng-checked="allSettings" ng-disabled="allSettings"> All keys in a file <br>
+          </div>
+          <div style="margin: 10px;">
+            <input type="checkbox" name="allKeys" id="backup-allLearnt" ng-checked="allSettings" ng-disabled="allSettings"> All Learnt Translations in a file <br>
+          </div>
+          <div style="margin: 10px;">
+            <input type="checkbox" name="allKeys" id="backup-allSaved" ng-checked="allSettings" ng-disabled="allSettings"> All Saved Translations in a file <br>
+          </div>
+          <div class="pull-right">
+              <button class="btn btn-success" ng-click="opctrl.scanCheckbox()">
+                Backup
+              </button>
+            </div>
+        </div>
+    </div>
     </div>
   </div>
   <div class="col-md-6">
@@ -39,8 +40,9 @@
             </button>
           </span>
           <input type="file" id="config-file" style="display: none">
-          <h5 class="list-group-item-heading"><strong data-translate="restoreConfiguration">Restore Configuration</strong></h5>
-          <p class="list-group-item-text"><span data-translate="restoreAllYourSettings">Restore all your settings and keys from a file.</span></p>
+          <h5 class="list-group-item-heading"><strong>Restore All Settings</strong></h5>
+          <p class="list-group-item-text">Restore all your settings and keys from a
+            <code> mtw_config.txt </code> file.</p>
         </li>
         <li class="list-group-item">
           <span class="pull-right">
@@ -48,12 +50,14 @@
               <span data-translate="restore">Restore</span>
             </button>
           </span>
-          <input type="file" id="keys-file" style="display: none">
-            <h5 class="list-group-item-heading"><strong><span data-translate="restoreKeys">Restore Keys</span></strong></h5>
-            <p class="list-group-item-text"><span data-translate="restoreAllKeysFromAFile">Restore all your keys from a file.</span></p>
+          <input type="file" id="restores-file" style="display: none">
+            <h5 class="list-group-item-heading"><strong>Restore Specific Settings</strong></h5>
+            <p class="list-group-item-text">Restore settings from a
+              <code> mtw_backup.txt </code> file.</p>
         </li>
       </ul>
 
     </div>
+  </div>
   </div>
 </div>
