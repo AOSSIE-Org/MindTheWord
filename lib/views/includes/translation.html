@@ -61,7 +61,7 @@ p.big {
           <b> Yandex, Bing <span data-translate="and">and</span> Google <span data-translate="requireKeys">require keys</span>.</b> <span data-translate="translationParagraph1">They use the keys to identify users, in order to limit the amount of translations that each user can request per month. If the limit is reached, they stop working temporarily. As the limit is high, it is unlikely to be reached.</span>
           <b>Please add keys for the translators you would like to use below.</b>
         </p>
-        <br> 
+        <br>
         <div ng-if="opctrl.yandexMonthlyLimit > 25.00" class="progress">
           <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: {{opctrl.yandexMonthlyLimit}}%">
             <span style="color:black;">{{opctrl.yandexMonthlyLimit}}% Monthly Yandex API Limit Reached</span>
@@ -101,6 +101,18 @@ p.big {
               <a class="btn btn-success" href="https://cloud.google.com/translate/v2/quickstart" target="_blank"><span data-translate="getPaidGoogleKey">Get Paid Google Key</span></a>
           </span>
         </div>
+        <br>
+        <span>
+          <input type="checkbox" name="" id="" ng-model="opctrl.optionalAPI" ng-click="opctrl.toggleOptionalAPI()"> Information Rich Cards <span style="font-weight: bolder;">(Optional)</span> <br>
+          <div style="margin: 5px 0px 0px 25px; font-size: 10px;"> A Detailed information for a particular word &#8212; part's of speech, usage example for each word </div> <br>
+          <div class="input-group" ng-show="opctrl.optionalAPI">
+            <span class="label-success input-group-addon">Translation Details</span>
+            <input ng-model="opctrl.detailsApiKey" ng-blur="opctrl.setDetailsApi()" type="text" class="form-control">
+            <span class="input-group-btn">
+                <a class="btn btn-success" href="https://tech.yandex.com/dictionary" target="_blank"><span>Get Free Key</span></a>
+            </span>
+          </div>
+        </span>
         <br>
         <p class="big">
           <span class="label label-danger"><span data-translate="note">Note</span>:</span>
