@@ -1,0 +1,17 @@
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 style="display: inline;" data-ng-if="srcLang.length !== 0 && targetLang.length !== 0"
+     data-translate="chooseCorrectTranslations">
+        Convert the given sentence in {{srcLang}} 
+        to {{targetLang}} by selecting the most appropriate translation from the 
+        drop down list in their respective blanks.
+    </h3>
+    <h3 style="display: inline;" data-ng-else
+     data-translate="chooseCorrectTranslations">
+        Translation Map not selected! Please create one in the translation section.
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div id="quiz-sentence-question"></div>
+  </div>
+</div>
