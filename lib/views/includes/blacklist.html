@@ -10,9 +10,9 @@
       </div>
       <div class="panel-body">
         <div class="input-group">
-          <input type="text" class="form-control" ng-model="opctrl.newBlacklistWebsite" id="new-blacklist-word" placeholder="stackoverflow.com">
+          <input type="text" class="form-control" ng-model="opctrl.newBlacklistWebsite" id="new-blacklist-website" placeholder="stackoverflow.com">
           <span class="input-group-btn">
-            <button class="btn btn-danger" type="submit" ng-click="opctrl.addBlackListedWebsite()" data-translate="add">Add</button>
+            <button class="btn btn-danger" id="add-blacklist-website" type="submit" ng-click="opctrl.addBlackListedWebsite()" data-translate="add">Add</button>
           </span>
         </div>
       </div>
@@ -43,7 +43,7 @@
         <div class="input-group">
           <input type="text" class="form-control" ng-model="opctrl.newBlacklistWord" id="new-blacklist-word" placeholder="and">
           <span class="input-group-btn">
-            <button class="btn btn-danger" type="submit" ng-click="opctrl.addBlackListedWord()" data-translate="add">Add</button>
+            <button class="btn btn-danger" id="add-blacklist-word" type="submit" ng-click="opctrl.addBlackListedWord()" data-translate="add">Add</button>
           </span>
         </div>
       </div>
