@@ -31,7 +31,15 @@ Read more in [Description.md](Description.md).
 
 Testing
 -------
-run `npm test`
+1. `npm install -g mocha mochawesome`
+2. `npm install selenium-webdriver mocha chromedriver chromium`
+3. **[optional]** `export YANDEX_KEY="<yandex translation key>"`
+4. `npm test`
+
+### using virtual display 
+install [xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml) display
+
+`xvfb-run -s "-screen 0 1920x1080x16" -a npm test`
 
 How to Contribute
 -------------
