@@ -34,7 +34,9 @@ function reloadToHomePage() {
   describe('reset to home screen', function() {
     it('set screen as home page', (done) => {
       driver.get('chrome-extension://jaodmdnaglgheeibgdcgdbhljooejiha/views/options.html').then(() => {
-        done();
+        driver.findElement(By.xpath('//*[@id="translation-settings-nav"]')).click().then(() => {
+          done();
+        });
       });
     });
   });

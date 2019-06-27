@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap-tour.min.css">
     <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/d3.v4.js"></script>
     <script src="../assets/js/bootstrap-tour.min.js"></script>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/reset.css"> <!-- CSS reset -->
@@ -83,6 +84,9 @@
      <nav class="cd-side-nav">
         <ul>
           <li class="active">
+              <a id="home-nav" href="#home" data-toggle="tab" data-placement="right" title="Home">Home</a>
+          </li>
+          <li>
             <a id="translation-settings-nav" href="#translation-settings" data-toggle="tab" data-translate="translation" data-placement="right" title="Language Translation Services">Translation</a>
           </li>
           <li>
@@ -109,7 +113,10 @@
     
     <div class="content-wrapper">
       <div class="tab-content">
-        <div class="tab-pane active" id="translation-settings">
+        <div class="tab-pane active" id="home">
+          <ng-include src="'includes/home.html'" onload="opctrl.setup()"></ng-include>
+        </div>
+        <div class="tab-pane" id="translation-settings">
           <ng-include src="'includes/translation.html'" onload="opctrl.setup()"></ng-include>
         </div>
         <div class="tab-pane" id="blacklisting">
