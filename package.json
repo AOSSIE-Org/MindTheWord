@@ -5,7 +5,8 @@
   "repository": "https://github.com/OiWorld/MindTheWord",
   "license": "",
   "scripts": {
-    "test": "mocha test/webdriver.js"
+    "test": "mocha test/webdriver.js",
+    "visualise": "mocha test/webdriver.js --reporter mochawesome --reporter-options autoOpen=true"
   },
   "jspm": {
     "dependencies": {
