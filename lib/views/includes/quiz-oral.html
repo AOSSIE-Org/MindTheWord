@@ -11,7 +11,8 @@
       </h3>
     </div>
     <div class="panel-body">
-        <div style="font-weight: bold;">Pronounce the following: </div>
+        <div>Choose Speech language: <span id="quiz-oral-lang-div"></span></div>
+        <div style="font-weight: bold;">Pronounce the following: <span id="quiz-oral-question"></span> </div> <br>
         <div id="quiz-sentence-question-oral" style="line-height: 40px;"></div>
         <textarea
             style="font-size: 18px; border-radius: 5px;"
@@ -25,7 +26,19 @@
             alt="speak-mic"
             title="click here to start/stop speaking"
             style="height: 5%;"
+            data-ng-click="opctrl.iterateQuizOralCount(1)"
         >
+        <span data-ng-show="showListeningLabel">Listening ... </span> <br>
+        <button
+            class="btn btn-success"
+            data-ng-click="opctrl.quizValidateAnswer('quiz-oral-done')"
+        >
+            Done
+        </button>
+        <span data-ng-show="showResultQuizOral">
+            <img src="../../assets/img/tick_green.png" data-ng-if="quizOralResult" style="height: 25px; margin-left: 5px;" alt="">
+            <img src="../../assets/img/cross_red.png" data-ng-if="!quizOralResult" style="20px; margin-left: 5px" alt="">
+        </span>
     </div>
 </div>
   
