@@ -10,14 +10,19 @@
         Translation Map not selected! Please create one in the translation section.
     </h3>
   </div>
-  <div class="panel-body" ng-disabled="opctrl.disableAural">
-    <div id="quiz-aural-question" style="line-height: 40px;"></div>
-    <button class="btn btn-success" data-ng-click="opctrl.speak(question)">Play</button>
-    <div id="quiz-aural-options" style="line-height: normal;"></div>
-    <button
-        class="btn btn-success"
-    >
-        Done
-    </button>
+  <div class="panel-body" data-ng-disabled="opctrl.statusAural.length === 0">
+    <div data-ng-if="!disableAuralQuiz">
+        <div id="quiz-aural-question" style="line-height: 40px;"></div>
+        <button class="btn btn-success" data-ng-click="opctrl.speak(question)">Play</button>
+        <div id="quiz-aural-options" style="line-height: normal;"></div>
+        <button
+            class="btn btn-success"
+        >
+            Done
+        </button>
+    </div>
+    <div data-ng-if="disableAuralQuiz">
+      Please browse using the extension in order practice quizzes.
+    </div>
   </div>
 </div>
