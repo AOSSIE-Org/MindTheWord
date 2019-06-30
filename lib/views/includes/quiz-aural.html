@@ -10,10 +10,10 @@
         Translation Map not selected! Please create one in the translation section.
     </h3>
   </div>
-  <div class="panel-body">
+  <div class="panel-body" ng-disabled="opctrl.disableAural">
     <div id="quiz-aural-question" style="line-height: 40px;"></div>
-    <span data-ng-click="">Play</span>
-    <div id="quiz-aural-options"></div>
+    <button class="btn btn-success" data-ng-click="opctrl.speak(question)">Play</button>
+    <div id="quiz-aural-options" style="line-height: normal;"></div>
     <button
         class="btn btn-success"
     >
