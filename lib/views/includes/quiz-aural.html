@@ -11,7 +11,7 @@
     </h3>
   </div>
   <div class="panel-body" data-ng-disabled="opctrl.statusAural.length === 0">
-    <div data-ng-if="!disableAuralQuiz">
+    <div data-ng-if="!disableAuralQuiz && supportQuizAural">
         <div id="quiz-aural-question" style="line-height: 40px;"></div>
         <button class="btn btn-success" data-ng-click="opctrl.speak(question)">Play</button>
         <div id="quiz-aural-options" style="line-height: normal;"></div>
@@ -21,8 +21,11 @@
             Done
         </button>
     </div>
-    <div data-ng-if="disableAuralQuiz">
+    <div data-ng-if="disableAuralQuiz && supportQuizAural">
       Please browse using the extension in order practice quizzes.
+    </div>
+    <div data-ng-if="!supportQuizAural">
+      Your browser does not support text-to-speech functionality.
     </div>
   </div>
 </div>
