@@ -1,0 +1,112 @@
+<style>
+#activity-progress-chart {
+    max-width: 1000px;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+svg {
+    width: 6000px;
+    height: 400px;
+}
+
+.activity-details-1 {
+    height: 70vh;
+    background-color: #fff;
+}
+
+.activity-secondary {
+    height: 70vh;
+    background-color: #fff;
+}
+
+.ap-websites {
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.ap-websites-head {
+    text-align: center;
+    font-weight: 800;
+    padding: 20px;
+}
+
+.ap-list-tMap {
+    font-size: 13px;
+    line-height: normal;
+}
+
+.key-styles {
+    font-weight: 700;
+}
+
+.ap-bottom {
+    margin-bottom: 50%;
+}
+
+.ap-list-urls {
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 500;
+}
+
+#ap-blocked-words {
+    height: 35vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#ap-websites-head {
+    height: 35vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.none-list {
+    text-align: center;
+    top: 50%;
+    position: absolute;
+}
+</style>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <span>Activity Progress</span>
+        <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip"
+         data-placement="bottom" title="Helps keep a watch on your learning activity"></span>
+    </div>
+    <div class="panel-home">
+        <div id="activity-progress-chart">
+
+        </div>
+    </div>
+</div>
+<div class="panel panel-warning ap-bottom">
+    <div class="panel-heading">
+        <span>Activity Details</span>
+        <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip"
+         data-placement="bottom" title="Information on your learning activity"></span>
+    </div>
+    <div class="panel-home">
+        <div id="#activity-details">
+            <div class="col-md-8 activity-details-1">
+                <div class="col-md-6 ap-websites" id="ap-websites-visited">
+                    <div class="ap-websites-head"> Websites Visited</div>
+                    <div class="none-list">Record not select from the Activity Chart</div>
+                </div>
+                <div class="col-md-6 ap-websites" id="ap-websites-tMap">
+                    <div class="ap-websites-head">Traslation Map</div>
+                    <div class="none-list">Record not select from the Websites Visited list</div>
+                </div>
+            </div>
+            <div class="col-md-4 activity-secondary" id="ap-secondary">
+                <div id="ap-blocked-words">
+                    <div class="ap-websites-head">Blacklisted Words</div>
+                </div>
+                <div id="ap-blocked-websites">
+                    <div class="ap-websites-head">Blacklisted Websites</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
