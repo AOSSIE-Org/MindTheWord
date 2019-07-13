@@ -11,7 +11,7 @@
       </h3>
     </div>
     <div class="panel-body" data-ng-init="showTranslation=false">
-        <div data-ng-if="(srcLang.length !== 0 && targetLang.length !== 0) && supportQuizOral">
+        <div id="quiz-oral-area" data-ng-if="(srcLang.length !== 0 && targetLang.length !== 0) && supportQuizOral">
             <div>Choose Speech language: <span id="quiz-oral-lang-div"></span></div>
             <div style="font-weight: bold;">Pronounce the following:
                 <span id="quiz-oral-question"></span>
@@ -39,10 +39,11 @@
             <button
                 class="btn btn-success"
                 data-ng-click="opctrl.quizValidateAnswer('quiz-oral-done')"
+                id="quiz-oral-done"
             >
                 Done
             </button>
-            <span data-ng-show="showResultQuizOral">
+            <span data-ng-show="showResultQuizOral" id="quiz-oral-result-show">
                 <img src="../../assets/img/tick_green.png" data-ng-if="quizOralResult" style="height: 25px; margin-left: 5px;" alt="">
                 <img src="../../assets/img/cross_red.png" data-ng-if="!quizOralResult" style="height: 20px; margin-left: 5px" alt="">
             </span>
