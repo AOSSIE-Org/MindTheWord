@@ -1,32 +1,51 @@
-<div class="panel panel-success">
-  <div class="panel-heading">
-    <h3 style="display: inline;" data-translate="chooseCorrectTranslations">Choose The Correct Translations</h3>
-  </div>
-  <div class="panel-body">
-    <div ng-hide="opctrl.translatedWordsExist" style="width: 50%; margin: 0 auto;">
-      <h3 class="centertext"  data-translate="noTranslateWords">No Translated Words</h3>
-      <h4 class="centertext" data-translate="translateWordstoQuiz">Translate words to take a quiz from</h4>
+<style>
+.quizzing-sections {
+    height: 40vh;
+}
+.quiz-headings {
+    font-weight: 800;
+    text-align: center;
+    border-bottom: 1px solid pink;
+    padding-bottom: 5px;
+}
+.quiz-level {
+    font-weight: 600;
+}
+.quiz-inner-wrapper {
+    padding: 10px;
+    margin-top: 10px;
+}
+.quiz-details {
+    height: 40vh;
+}
+.quiz-about {
+    font-size: 13px;
+    font-weight: bold;
+}
+.quiz-short {
+    line-height: initial;
+}
+.quiz-sentence-question-options {
+    background-color: white;
+    border-radius: 5px;
+}
+</style>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div style="font-weight: bold;" id="quiz-address">
+            <button data-ng-click="opctrl.initialiseQuizWrapper()" data-ng-show="!quizSection" style="padding: 3px;" class="btn btn-success">
+                Back To
+            </button>
+            <span id="quiz-address-parent">Quizzing Sections</span>
+        </div>
+        <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="Pratice your language skills"></span>
     </div>
-    <form>
-      <table class="table table-list" border="0">
-        <tbody>
-          <tr ng-repeat="(word, translation) in opctrl.randomTranslatedWordsForQuiz">
-            <td>
-              {{word}}  :
-            </td>
-            <td>
-              <select class="form-control ng-pristine ng-touched" ng-model="opctrl.quizAnswers[$index]" ng-change="opctrl.checkAnswer($index)">
-                 <option ng-repeat="opt in opctrl.quizOptions track by $index">{{opt}}</option>
-              </select>
-            </td>
-            <td>
-              <div style="text-align:center;display:none;" id="correct-result-{{$index}}"><span class="glyphicon glyphicon-ok" style="font-size: 30px;color:green;"></span></div>
-              <div style="text-align:center;display:none;" id="incorrect-result-{{$index}}"><span class="glyphicon glyphicon-remove" style="font-size: 30px;color:red;"></span></div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
-    <button style="display:block;margin: 0 auto;" ng-show="opctrl.translatedWordsExist" class="btn btn-primary" ng-click="opctrl.generateNewQuiz()" data-translate="generateNewQuiz">Generate New Quiz</button>
-  </div>
+</div>
+<div class="quiz-wrapper" data-ng-init="opctrl.initialiseQuizWrapper()">
+    <div data-ng-show="quizSection" data-ng-include="'includes/quiz-sections.html'">
+    </div>
+    <div data-ng-show="quizSimpleWordTranslation" data-ng-include="'includes/quiz-words.html'">
+    </div>
+    <div data-ng-show="quizSentenceTranslation" data-ng-include="'includes/quiz-sentence.html'">
+    </div>
 </div>
