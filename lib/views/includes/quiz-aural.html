@@ -12,9 +12,9 @@
   </div>
   <div class="panel-body" data-ng-disabled="opctrl.statusAural.length === 0">
     <div data-ng-if="!disableAuralQuiz && supportQuizAural">
-        <div id="quiz-aural-question" style="line-height: 40px;"></div>
-        <button class="btn btn-success" data-ng-click="opctrl.speak(question)">Play</button>
-        <div id="quiz-aural-options" style="line-height: normal;"></div>
+        <img data-ng-click="opctrl.speak(question)" src="../../assets/img/play.png" style="height: 33px;" alt="Play" title="Play" srcset="" />
+        <span id="quiz-aural-question" class="quiz-aural-styles"></span>
+        <div id="quiz-aural-options" style="line-height: normal; padding: 32px;"></div>
         <button
             class="btn btn-success"
         >
