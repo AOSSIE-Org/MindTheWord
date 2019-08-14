@@ -25,9 +25,21 @@ Read more in [Description.md](Description.md).
 6. `npm install`
 7. `jspm install`
 8. `gulp build`
-9. Open Chrome and go to `chrome://extensions`
-10. Enable "Developer mode"
-11. Drag  "dist" folder into the browser or click "Load unpacked extension" and select the "dist" folder.
+9. Loading in the respective browsers
+#### Loading in Google Chrome
+ - Open Chrome and go to `chrome://extensions`
+ - Enable "Developer mode"
+ - Drag  `dist/chrome` folder into the browser or click "Load unpacked extension" and select the `dist/chrome` folder.
+
+#### Loading in Firefox
+ - Open Firefox and type `about:debugging` in the address bar
+ - Click on `Load Temporary Add-on...`
+ - Navigate and select the `dist/firefox` folder.
+
+#### Loading in Edge
+ - Download and install the [Microsoft Extension Toolkit](https://www.microsoft.com/en-in/p/microsoft-edge-extension-toolkit/9nblggh4txvb)
+  - Follow the [Explanatory video](https://youtu.be/d0dHdOfjhRA) to port the Chrome extension from `dist/chrome` into a `Edge` supported extension
+
 
 Testing
 -------
