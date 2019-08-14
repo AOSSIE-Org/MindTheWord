@@ -1,4 +1,36 @@
-<div id = "manage-patterns" class="panel panel-primary">
+<style>
+.ts-example-style {
+  padding: 10px;
+  background-color: #fff;
+  line-height: normal;
+}
+</style>
+<div class="panel panel-success" data-ng-init="opctrl.setTSExample()">
+  <div class="panel-heading">
+    <span>Translation Settings Example</span>
+    <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom"
+     title="Get complete idea on how your translated webpage would look based on the settings you choose."></span>
+  </div>
+  <div class="panel-home">
+    <div id="ts-example" class="ts-example-style">
+      <p id="ts-example-text">
+          A browser extension is a small software module for customizing a web browser. Browsers typically 
+          allow a variety of extensions, including user interface modifications, ad blocking, and cookie management. 
+          Browser plug-ins are a separate type of module. The main difference is that extensions are usually just 
+          source code, but plug-ins are always executables. As of 2019, plug-ins have been deprecated 
+          by most browsers, while extensions are widely used. The most popular browser, Google Chrome, has thousands 
+          of extensions available but only one plug-in: the Adobe Flash Player that is disabled by default.
+          Melitaea didyma is a medium-sized butterfly with a wingspan reaching 35–50 millimetres (1.4–2.0 in). The 
+          overside of the wings is a bright orange-brown with dark brown markings arranged in rows, which are quite 
+          variable in quantity and size. Sometimes the colour of the females is a duller orange, shaded with grey-green. 
+          The underside of the wings is chequered pale yellow and pale orange. M. didyma has seasonal forms and sexual 
+          dimorphism. This butterfly flies from March to October depending on the location. This species has two or three 
+          generations and overwinters as young caterpillar.
+      </p>
+    </div>
+  </div>
+</div>
+<div id="manage-patterns" class="panel panel-primary">
   <div class="panel-heading">
     <span data-translate="translationPatterns">Translation Patterns</span>
     <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="Translations will be limited to user defined in Advanced Tab"></span>
