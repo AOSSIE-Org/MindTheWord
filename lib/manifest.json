@@ -6,6 +6,7 @@
   "short_name": "MindTheWord", 
   "description": "__MSG_appDesc__",
   "default_locale": "en",
+  "omnibox": { "keyword" : "mindtheword" },
   "content_security_policy": "media-src 'self'; object-src 'self'; script-src 'self' https://www.google.com https://ssl.google-analytics.com;",
   "background" : {
     "scripts" : ["eventPage.js"],
