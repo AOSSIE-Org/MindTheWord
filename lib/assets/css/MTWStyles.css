@@ -177,3 +177,11 @@ span.mtwTranslatedWordh {
     line-height: 1.8;
     cursor: pointer;
 }
+
+.ts-example-style {
+    padding: 10px;
+    background-color: #ECEFF1;
+    line-height: normal;
+    overflow-y: scroll;
+    height: 150px;
+}
