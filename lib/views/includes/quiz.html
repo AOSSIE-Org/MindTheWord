@@ -1,6 +1,7 @@
 <style>
 .quizzing-sections {
     height: 40vh;
+    margin-bottom: 20px;
 }
 .quiz-headings {
     font-weight: 800;
@@ -29,6 +30,14 @@
     background-color: white;
     border-radius: 5px;
 }
+.quiz-aural-styles {
+    line-height: 40px;
+    margin-top: -4px;
+    font-size: 20px;
+    padding-left: 14px;
+    margin-bottom: 4px;
+    position: absolute;
+}
 </style>
 <div class="panel panel-primary">
     <div class="panel-heading">
@@ -49,5 +58,7 @@
     <div data-ng-show="quizSentenceTranslation" data-ng-include="'includes/quiz-sentence.html'">
     </div>
     <div data-ng-show="quizOralTranslation" data-ng-include="'includes/quiz-oral.html'">
+    </div>
+    <div data-ng-show="quizAuralTranslation" data-ng-include="'includes/quiz-aural.html'">
     </div>
 </div>

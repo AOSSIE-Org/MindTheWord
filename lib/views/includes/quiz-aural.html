@@ -1,0 +1,32 @@
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 style="display: inline;" data-ng-if="srcLang.length !== 0 && targetLang.length !== 0"
+     data-translate="chooseCorrectTranslations">
+        Select the most appropriate word by listening to the audio 
+        in {{targetLang}} from the drop down list.
+    </h3>
+    <h3 style="display: inline;" data-ng-if="srcLang.length === 0 || targetLang.length === 0"
+     data-translate="chooseCorrectTranslations">
+        Translation Map not selected! Please create one in the translation section.
+    </h3>
+  </div>
+  <div class="panel-body" data-ng-disabled="opctrl.statusAural.length === 0">
+    <div data-ng-if="!disableAuralQuiz && supportQuizAural">
+        <img data-ng-click="opctrl.speak(question)" src="../../assets/img/play.png" style="height: 33px;" alt="Play" title="Play" srcset="" />
+        <span id="quiz-aural-question" class="quiz-aural-styles"></span>
+        <div id="quiz-aural-options" style="line-height: normal; padding: 32px; margin-top: 3%;"></div>
+        <button
+            class="btn btn-success"
+            style="margin-top: 5%;"
+        >
+            Done
+        </button>
+    </div>
+    <div data-ng-if="disableAuralQuiz && supportQuizAural">
+      Please browse using the extension in order practice quizzes.
+    </div>
+    <div data-ng-if="!supportQuizAural">
+      Your browser does not support text-to-speech functionality.
+    </div>
+  </div>
+</div>
