@@ -33,6 +33,14 @@
 .quiz-hide {
     display: none;
 }
+.quiz-aural-styles {
+    line-height: 40px;
+    margin-top: -4px;
+    font-size: 20px;
+    padding-left: 14px;
+    margin-bottom: 4px;
+    position: absolute;
+}
 </style>
 <div class="panel panel-primary">
     <div class="panel-heading">
@@ -54,7 +62,6 @@
     </div>
     <div data-ng-show="quizOralTranslation" data-ng-include="'includes/quiz-oral.html'">
     </div>
-    <!-- support disabled for UI improvements
-        <div data-ng-show="quizAuralTranslation" data-ng-include="'includes/quiz-aural.html'">
-    </div> -->
+    <div data-ng-show="quizAuralTranslation" data-ng-include="'includes/quiz-aural.html'">
+    </div>
 </div>
