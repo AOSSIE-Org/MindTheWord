@@ -11,16 +11,16 @@
     </h3>
   </div>
   <div class="panel-body" data-ng-disabled="opctrl.statusAural.length === 0">
-    <div data-ng-if="!disableAuralQuiz && supportQuizAural">
+    <div id="quiz-aural-area" data-ng-if="!disableAuralQuiz && supportQuizAural">
         <img data-ng-click="opctrl.speak(question)" src="../../assets/img/play.png" style="height: 33px;" alt="Play" title="Play" srcset="" />
         <span id="quiz-aural-question" class="quiz-aural-styles"></span>
         <div id="quiz-aural-options" style="line-height: normal; padding: 32px; margin-top: 3%;"></div>
-        <button
+        <!-- <button
             class="btn btn-success"
             style="margin-top: 5%;"
         >
             Done
-        </button>
+        </button> -->
     </div>
     <div data-ng-if="disableAuralQuiz && supportQuizAural">
       Please browse using the extension in order practice quizzes.

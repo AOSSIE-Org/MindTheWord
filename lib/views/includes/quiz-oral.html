@@ -10,41 +10,48 @@
           Translation Map not selected! Please create one in the translation section.
       </h3>
     </div>
-    <div class="panel-body" data-ng-init="showTranslation=false" data-ng-disabled="srcLang.length === 0 || targetLang.length === 0">
-        <div>Choose Speech language: <span id="quiz-oral-lang-div"></span></div>
-        <div style="font-weight: bold;">Pronounce the following:
-            <span id="quiz-oral-question"></span>
-            <span id="quiz-oral-question-translation" style="font-weight: bold; margin-left: 10px;" data-ng-show="showTranslation">
-                Translated Form: 
+    <div class="panel-body" data-ng-init="showTranslation=false">
+        <div id="quiz-oral-area" data-ng-if="(srcLang.length !== 0 && targetLang.length !== 0) && supportQuizOral">
+            <div>Choose Speech language: <span id="quiz-oral-lang-div"></span></div>
+            <div style="font-weight: bold;">Pronounce the following:
+                <span id="quiz-oral-question"></span>
+                <span id="quiz-oral-question-translation" style="font-weight: bold; margin-left: 10px;" data-ng-show="showTranslation">
+                    Translated Form: 
+                </span>
+            </div> <br>
+            <div id="quiz-sentence-question-oral" style="line-height: 40px;"></div>
+            <textarea
+                style="font-size: 18px; border-radius: 5px;"
+                name="messageUserSpeech"
+                id="messageUserSpeechID"
+                cols="30"
+                rows="4"
+            ></textarea>
+            <img
+                src="../../assets/img/mic-icon.svg"
+                alt="speak-mic"
+                title="click here to start/stop speaking"
+                style="height: 5%;"
+                data-ng-click="opctrl.iterateQuizOralCount(1)"
+            >
+            <span data-ng-show="showListeningLabel">Listening ... </span> <br>
+            <button class="btn btn-success" data-ng-click="showTranslation=true">Show Translation</button>
+            <button
+                class="btn btn-success"
+                data-ng-click="opctrl.quizValidateAnswer('quiz-oral-done')"
+                id="quiz-oral-done"
+            >
+                Done
+            </button>
+            <span data-ng-show="showResultQuizOral" id="quiz-oral-result-show">
+                <img src="../../assets/img/tick_green.png" data-ng-if="quizOralResult" style="height: 25px; margin-left: 5px;" alt="">
+                <img src="../../assets/img/cross_red.png" data-ng-if="!quizOralResult" style="height: 20px; margin-left: 5px" alt="">
             </span>
-        </div> <br>
-        <div id="quiz-sentence-question-oral" style="line-height: 40px;"></div>
-        <textarea
-            style="font-size: 18px; border-radius: 5px;"
-            name="messageUserSpeech"
-            id="messageUserSpeechID"
-            cols="30"
-            rows="4"
-        ></textarea>
-        <img
-            src="../../assets/img/mic-icon.svg"
-            alt="speak-mic"
-            title="click here to start/stop speaking"
-            style="height: 5%;"
-            data-ng-click="opctrl.iterateQuizOralCount(1)"
-        >
-        <span data-ng-show="showListeningLabel">Listening ... </span> <br>
-        <button class="btn btn-success" data-ng-click="showTranslation=true">Show Translation</button>
-        <button
-            class="btn btn-success"
-            data-ng-click="opctrl.quizValidateAnswer('quiz-oral-done')"
-        >
-            Done
-        </button>
-        <span data-ng-show="showResultQuizOral">
-            <img src="../../assets/img/tick_green.png" data-ng-if="quizOralResult" style="height: 25px; margin-left: 5px;" alt="">
-            <img src="../../assets/img/cross_red.png" data-ng-if="!quizOralResult" style="height: 20px; margin-left: 5px" alt="">
-        </span>
+        </div>
+        <div data-ng-if="!supportQuizOral">
+            Your browser does not meet the w3C standards. Please make sure you use the supported 
+            browser or update your browser to the latest version.
+        </div>
     </div>
 </div>
   
