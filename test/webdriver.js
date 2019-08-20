@@ -28,7 +28,7 @@ chromeOptions.setChromeBinaryPath('/usr/bin/chromium-browser');
 chromeOptions.addArguments('--no-sandbox');
 chromeOptions.addArguments('--disable-dev-shm-usage');
 chromeOptions.addArguments('--disable-gpu');
-chromeOptions.addArguments('--load-extension=dist/');
+chromeOptions.addArguments('--load-extension=dist/chrome/');
 
 function reloadToHomePage() {
   describe('reset to home screen', function() {

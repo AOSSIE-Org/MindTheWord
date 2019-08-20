@@ -1,17 +1,21 @@
 <div class="panel panel-success">
     <div class="panel-heading">
-      <h3 style="display: inline;" data-ng-if="srcLang.length !== 0 && targetLang.length !== 0"
+      <h3 style="display: inline;" data-ng-if="(srcLang.length !== 0 && targetLang.length !== 0) && !showWarningOral"
        data-translate="chooseCorrectTranslations">
           Pronounce the given word / sentence in {{srcLang}} 
           to {{targetLang}}
       </h3>
-      <h3 style="display: inline;" data-ng-if="srcLang.length === 0 || targetLang.length === 0"
+      <h3 style="display: inline;" data-ng-if="(srcLang.length === 0 || targetLang.length === 0) && !showWarningOral"
        data-translate="chooseCorrectTranslations">
           Translation Map not selected! Please create one in the translation section.
       </h3>
+      <h3 style="display: inline;" data-ng-if="showWarningOral"
+        data-translate="chooseCorrectTranslations">
+          Feature incompatible with the browser
+      </h3>
     </div>
-    <div class="panel-body" data-ng-init="showTranslation=false">
-        <div id="quiz-oral-area" data-ng-if="(srcLang.length !== 0 && targetLang.length !== 0) && supportQuizOral">
+    <div class="panel-body" data-ng-init="showTranslation=false" data-ng-disabled="srcLang.length === 0 || targetLang.length === 0">
+        <div data-ng-show="!showWarningOral">
             <div>Choose Speech language: <span id="quiz-oral-lang-div"></span></div>
             <div style="font-weight: bold;">Pronounce the following:
                 <span id="quiz-oral-question"></span>
@@ -39,19 +43,20 @@
             <button
                 class="btn btn-success"
                 data-ng-click="opctrl.quizValidateAnswer('quiz-oral-done')"
-                id="quiz-oral-done"
             >
                 Done
             </button>
-            <span data-ng-show="showResultQuizOral" id="quiz-oral-result-show">
+            <span data-ng-show="showResultQuizOral">
                 <img src="../../assets/img/tick_green.png" data-ng-if="quizOralResult" style="height: 25px; margin-left: 5px;" alt="">
                 <img src="../../assets/img/cross_red.png" data-ng-if="!quizOralResult" style="height: 20px; margin-left: 5px" alt="">
             </span>
+
         </div>
-        <div data-ng-if="!supportQuizOral">
-            Your browser does not meet the w3C standards. Please make sure you use the supported 
-            browser or update your browser to the latest version.
-        </div>
+
+        <h3 style="display: inline;" data-ng-if="showWarningOral"
+        data-translate="chooseCorrectTranslations">
+            Feature not supported on current browser. Switch to Google Chrome to use all the functionalities.
+        </h3>
     </div>
 </div>
   
