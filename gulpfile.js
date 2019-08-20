@@ -4,6 +4,7 @@ const gulp = require('gulp'),
   rename = require('gulp-rename'),
   runSequence = require('run-sequence'),
   minify = require('gulp-minify'),
+  replace = require('gulp-replace'),
   eslint = require('gulp-eslint'),
   gulpIf = require('gulp-if'),
   imagemin = require('gulp-imagemin');
@@ -73,22 +74,22 @@ gulp.task('minify', function () {
       noSource: true,
       mangle: false
     }))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist/chrome'));
 });
 
 gulp.task('copy-dist', function () {
-  gulp.src('./lib/_locales/**/*').pipe(gulp.dest('./dist/_locales/'));
-  gulp.src('./lib/assets/**/*').pipe(gulp.dest('./dist/assets/'));
-  gulp.src('./lib/styles/**/*').pipe(gulp.dest('./dist/styles/'));
-  gulp.src('./lib/common/*').pipe(gulp.dest('./dist/common/'));
-  gulp.src('./lib/views/**/*').pipe(gulp.dest('./dist/views/'));
-  return gulp.src('./lib/manifest.json').pipe(gulp.dest('./dist/'));
+  gulp.src('./lib/_locales/**/*').pipe(gulp.dest('./dist/chrome/_locales/'));
+  gulp.src('./lib/assets/**/*').pipe(gulp.dest('./dist/chrome/assets/'));
+  gulp.src('./lib/styles/**/*').pipe(gulp.dest('./dist/chrome/styles/'));
+  gulp.src('./lib/common/*').pipe(gulp.dest('./dist/chrome/common/'));
+  gulp.src('./lib/views/**/*').pipe(gulp.dest('./dist/chrome/views/'));
+  return gulp.src('./lib/manifest.json').pipe(gulp.dest('./dist/chrome/'));
 });
 
 gulp.task('build', function() {
   runSequence('clean', 'esLint', 'compress-images',
     ['bundle-content', 'bundle-options', 'bundle-event',
-      'bundle-popup'], 'minify', 'copy-dist');
+      'bundle-popup'], 'minify', 'copy-dist', 'replace-secondary', 'copy-secondary');
 });
 
 
@@ -107,6 +108,30 @@ gulp.task('esLint',() => {
       console.log('Run "gulp-fix" in terminal to fix these errors');
       process.exit();
     });
+});
+
+gulp.task('replace-secondary', function() {
+  gulp.src('./dist/chrome/*.js')
+    .pipe(replace('chrome.', 'browser.'))
+    .pipe(gulp.dest('./dist/firefox'));
+});
+
+gulp.task('copy-secondary', function() {
+  // remove unsupported manifest properties in firefox
+  gulp.src('./lib/manifest.json')
+    .pipe(replace('"tts",', ''))
+    .pipe(replace(`,
+    "persistent": false`, ''))
+    .pipe(replace('"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt8sOp84U8vR8eudy6JiiJtnjpEwEfmSKoEbWPSoCpf4OwlTyluUCwOBuqyc7uRRrPurWBj84OAZWewHnsJoSQs5NV0JzWsSrsv5GVv33cfJkRL4Zn77PzrF5fE53uI8E0ueA4ynGLVZ7DhjjIQjwCfVdZdsh1+4ZPKURjF0XZ7olK3z00EMNqHFdMqsv8R1Dkz9M1Oj2OoEiHMwE3sZD2tFtSaxnO/PqemsZLYhIUXSz9EreDXmD6qtlOGphUPCmJ0P4915HGwPJx7V84vXGf6KJf1GEy3uo2t+hJsCTZ0dDC6UBrltWd0ug+zD9QE/YnmWT069yUEfqXy6LmxlRgQIDAQAB",', ''))
+    .pipe(replace('"options_page": "views/options.html",', '"options_ui": {"page": "views/options.html"},'))
+    .pipe(gulp.dest('./dist/firefox/'));
+
+  // copy commons
+  gulp.src('./lib/_locales/**/*').pipe(gulp.dest('./dist/firefox/_locales/'));
+  gulp.src('./lib/assets/**/*').pipe(gulp.dest('./dist/firefox/assets/'));
+  gulp.src('./lib/styles/**/*').pipe(gulp.dest('./dist/firefox/styles/'));
+  gulp.src('./lib/common/*').pipe(gulp.dest('./dist/firefox/common/'));
+  gulp.src('./lib/views/**/*').pipe(gulp.dest('./dist/firefox/views/'));
 });
 
 function isFixed(file) {
