@@ -96,13 +96,13 @@ Inorder to provide support to other browser platforms and re-use the existing co
 
 7. [!411 Adds support for Anki like quizzing](https://gitlab.com/aossie/MindTheWord/merge_requests/411)
 
-8. [!412 Adds support for personalised quizzing using Machine Learning](https://gitlab.com/aossie/MindTheWord/merge_requests/412) *(unmerged)*
+8. [!412 Adds support for personalised quizzing using Machine Learning](https://gitlab.com/aossie/MindTheWord/merge_requests/412)
 
 9. [!413 Adds support for Explanation of Translation Settings via HTML snippet](https://gitlab.com/aossie/MindTheWord/merge_requests/413)
 
-10. [!414 Adds support for Firefox](https://gitlab.com/aossie/MindTheWord/merge_requests/414) *(unmerged)*
+10. [!414 Adds support for Firefox](https://gitlab.com/aossie/MindTheWord/merge_requests/414)
 
-11. [!415 Instructions for porting the Mind The Word extension to the Edge platform](https://gitlab.com/aossie/MindTheWord/merge_requests/415) *(unmerged)*
+11. [!415 Instructions for porting the Mind The Word extension to the Edge platform](https://gitlab.com/aossie/MindTheWord/merge_requests/415)
 
 12. [!416 Support for Omnibox operations in Mind The Word](https://gitlab.com/aossie/MindTheWord/merge_requests/416)
 
