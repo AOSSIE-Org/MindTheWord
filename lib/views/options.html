@@ -84,29 +84,29 @@
 
     <main class="cd-main-content">
      <nav class="cd-side-nav">
-        <ul>
-          <li class="active">
+        <ul class="nav">
+          <li class="nav-link">
               <a id="home-nav" href="#home" data-toggle="tab" data-placement="right" title="Home">Home</a>
           </li>
-          <li>
+          <li class="nav-link">
             <a id="translation-settings-nav" href="#translation-settings" data-toggle="tab" data-translate="translation" data-placement="right" title="Language Translation Services">Translation</a>
           </li>
-          <li>
+          <li class="nav-link">
             <a id="blacklisting-nav" href="#blacklisting" data-toggle="tab" data-translate="blacklist" data-placement="right" title="Blacklist Websites, Blacklist Words, Automatic Blacklisting">Blacklist</a>
           </li>
-          <li>
+          <li class="nav-link">
             <a id="learning-nav" href="#learning" data-toggle="tab" data-translate="learning" data-placement="right" title="Saved Translations, Difficulty Buckets, Learnt words">Learning</a>
           </li>
-          <li>
+          <li class="nav-link">
             <a id="advanced-settings-nav" href="#advanced-settings" data-toggle="tab" data-translate="advanced" data-placement="right" title="Color settings, Word configuration, Playback settings">Advanced</a>
           </li>
-          <li>
+          <li class="nav-link">
             <a id="backup-nav" href="#backup" data-toggle="tab" data-translate="backup" data-placement="right" title="Backup & Restore">Backup</a>
           </li>
-          <li>
+          <li class="nav-link">
             <a id="quiz-nav" href="#quiz" data-toggle="tab" data-translate="quiz" data-placement="right" title="Quiz that tests knowledge of learnt new language words so far!">Quiz</a>
           </li>
-          <li>
+          <li class="nav-link">
             <a id="hovercard-nav" href="#hovercard" data-toggle="tab" data-translate="hovercard" data-placement="right" title="Demonstration of various buttons on Hovercard">Hovercard</a>
           </li>
         </ul>
@@ -156,8 +156,9 @@
   <ng-include src="'includes/footer.html'"></ng-include>
   <script>
    $(document).ready(function(){
-      $('[data-toggle="tab"]').tooltip();   
+      $('[data-toggle="tab"]').tooltip();
    });
+   
   </script>
   <script src="../assets/js/jquery.menu-aim.js"></script>
   <script src="../assets/js/main.js"></script>
