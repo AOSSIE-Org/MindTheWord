@@ -1,63 +1,77 @@
-<div class="col-md-4 quizzing-sections" data-ng-click="opctrl.updateQuizSection('simpleWordQuiz')">
-    <div class="panel panel-body quiz-details">
-        <h3 class="quiz-headings">Simple Word Translations</h3>
-        <div class="quiz-inner-wrapper">
-            <span class="quiz-level">Level: Easy</span>
-            <div>
-                <br>
-                <span class="quiz-about">Description</span> <br> <br>
-                <div class="quiz-short">
-                    Pratice simple translations into the languages of your learning interests by selecting the 
-                    translation which matches the best from a given drop-down list.
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 quizzing-sections" data-ng-click="opctrl.updateQuizSection('simpleWordQuiz')">
+            <div class="panel panel-primary shadow-effects quiz-panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title quiz-headings">Simple Word Translations</h3>
+                </div>
+                <div class="panel-body"> 
+                    <div class="quiz-inner-wrapper">
+                        <div class="row quiz-about">
+                            Description
+                            <span class="label label-success quiz-level">Easy</span>
+                        </div><br><br>
+                        <div class="row quiz-short">
+                            Pratice simple translations into the languages of your learning interests by selecting the 
+                            translation which matches the best from a given drop-down list.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="col-md-4 quizzing-sections" data-ng-click="opctrl.updateQuizSection('quizSentence')">
-    <div class="panel panel-body quiz-details"">
-        <h3 class="quiz-headings">Writing Exercise - Sentence quizzing</h3>
-        <div class="quiz-inner-wrapper">
-            <span class="quiz-level">Level: Moderate</span>
-            <div>
-                <br>
-                <span class="quiz-about">Description</span> <br> <br>
-                <div class="quiz-short">
-                    Pratice the usage of the words learnt in your learning language by implementing them in real world sentences.
+
+        <div class="col-md-4 quizzing-sections" data-ng-click="opctrl.updateQuizSection('quizSentence')">
+            <div class="panel panel-primary shadow-effects quiz-panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title quiz-headings">Writing Exercise - Sentence quizzing</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="quiz-inner-wrapper">
+                        <div class="row quiz-about">
+                            Description
+                            <span class="label label-warning quiz-level">Moderate</span>
+                        </div><br><br>
+                        <div class="row quiz-short">
+                            Pratice the usage of the words learnt in your learning language by implementing them in real world sentences.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- disabled for UI improvements
-    <div class="col-md-4 quizzing-sections" data-ng-click="opctrl.updateQuizSection('quizAural')">
-    <div class="panel panel-body quiz-details"">
-        <h3 class="quiz-headings">Aural Exercise - Word quizzing</h3>
-        <div class="quiz-inner-wrapper">
-            <span class="quiz-level">Level: Moderate</span>
-            <div>
-                <br>
-                <span class="quiz-about">Description</span> <br> <br>
-                <div class="quiz-short">
-                    Listen to the pronunciation of the words or sentences and choose the most appropriate translation option 
-                    for the given word or sentence in your learning language.
+        <!-- disabled for UI improvements
+            <div class="col-md-4 quizzing-sections" data-ng-click="opctrl.updateQuizSection('quizAural')">
+            <div class="panel panel-body quiz-details"">
+                <h3 class="quiz-headings">Aural Exercise - Word quizzing</h3>
+                <div class="quiz-inner-wrapper">
+                    <span class="quiz-level">Level: Moderate</span>
+                    <div>
+                        <br>
+                        <span class="quiz-about">Description</span> <br> <br>
+                        <div class="quiz-short">
+                            Listen to the pronunciation of the words or sentences and choose the most appropriate translation option 
+                            for the given word or sentence in your learning language.
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div> -->
-<div class="col-md-4 quizzing-sections" data-ng-click="opctrl.updateQuizSection('quizOral')">
-    <div class="panel panel-body quiz-details"">
-        <h3 class="quiz-headings">Oral Exercise - Word quizzing</h3>
-        <div class="quiz-inner-wrapper">
-            <span class="quiz-level">Level: Hard</span>
-            <div>
-                <br>
-                <span class="quiz-about">Description</span> <br> <br>
-                <div class="quiz-short">
-                    Pratice the actual pronunciation of the words learnt in your learning language by implementing 
-                    them in short words and real world sentences.
+        </div> -->
+        <div class="col-md-4 quizzing-sections" data-ng-click="opctrl.updateQuizSection('quizOral')">
+            <div class="panel panel-primary shadow-effects quiz-panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title quiz-headings">Oral Exercise - Word quizzing</h3>
                 </div>
+                <div class="panel-body">
+                    <div class="quiz-inner-wrapper">
+                        <div class="row quiz-about">
+                            Description
+                            <span class="label label-danger quiz-level">Hard</span>
+                        </div><br><br>
+                        <div class="row quiz-short">
+                            Pratice the actual pronunciation of the words learnt in your learning language by implementing 
+                            them in short words and real world sentences.
+                        </div>
+                    </div>
+                </div> 
             </div>
         </div>
     </div>
