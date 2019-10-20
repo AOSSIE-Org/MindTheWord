@@ -6,18 +6,15 @@
 .quiz-headings {
     font-weight: 800;
     text-align: center;
-    border-bottom: 1px solid pink;
     padding-bottom: 5px;
 }
 .quiz-level {
     font-weight: 600;
+    float: right;
 }
 .quiz-inner-wrapper {
-    padding: 10px;
+    padding: 20px;
     margin-top: 10px;
-}
-.quiz-details {
-    height: 40vh;
 }
 .quiz-about {
     font-size: 13px;
@@ -41,6 +38,15 @@
     margin-bottom: 4px;
     position: absolute;
 }
+.shadow-effects:hover{
+    box-shadow: 5px 5px 5px gray;
+}
+.panel-body  {
+    word-wrap: break-word;
+}
+.quiz-panel {
+    min-height: 300px;
+}
 </style>
 <div class="panel panel-primary">
     <div class="panel-heading">
@@ -49,8 +55,8 @@
                 Back To
             </button>
             <span id="quiz-address-parent">Quizzing Sections</span>
+            <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="Pratice your language skills"></span>
         </div>
-        <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="Pratice your language skills"></span>
     </div>
 </div>
 <div class="quiz-wrapper" data-ng-init="opctrl.initialiseQuizWrapper()">
