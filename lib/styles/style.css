@@ -397,6 +397,10 @@ Sidebar
   -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;
   transition: opacity 0.2s 0s, visibility 0s 0.2s;
 }
+.cd-side-nav .active {
+  box-shadow: inset 3px 0 0 #1784c7;
+  background-color: #33383e !important;
+}
 .cd-side-nav.nav-is-visible {
   opacity: 1;
   visibility: visible;
