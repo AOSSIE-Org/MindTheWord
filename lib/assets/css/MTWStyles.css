@@ -3,16 +3,11 @@
 }
 
 .popover {
-    position: absolute;
-    top: -50px;
-    display: inline-block;
+    position: fixed;
     padding: 4px;
-    background-color: black;
-    color: white;
     border-radius: 6px;
     box-shadow: 2px 2px 10px black;
     user-select: none;
-    white-space: nowrap;
 }
 
 .mtwSpeak {
