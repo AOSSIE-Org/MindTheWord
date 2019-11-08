@@ -35,16 +35,16 @@ _Note: The above installation instructions may require the super user permission
  - Enable "Developer mode"
  - Drag  `dist/chrome` folder into the browser or click "Load unpacked extension" and select the `dist/chrome` folder.
 
- Note: Recent versions of chrome _(percisely after chrome 73)_ have shown CORS error in the development environment. This can be overcomed by launching chrome with `google-chrome --user-data-dir --disable-web-security`. If using chromium or any other distro of chrome, use the same flags. Please ensure that while using this flag, all instances of chrome have to be closed.
+ Note: Recent versions of chrome _(precisely after chrome 73)_ have shown CORS error in the development environment. This can be overcomed by launching chrome with `google-chrome --user-data-dir --disable-web-security`. If using chromium or any other distro of chrome, use the same flags. Please ensure that while using this flag, all instances of chrome have to be closed.
 
 #### Loading in Firefox
- - Open Firefox and type `about:debugging` in the address bar
+ - Open Firefox and type `about: debugging` in the address bar
  - Click on `Load Temporary Add-on...`
  - Navigate and select the `dist/firefox` folder.
 
 #### Loading in Edge
  - Download and install the [Microsoft Extension Toolkit](https://www.microsoft.com/en-in/p/microsoft-edge-extension-toolkit/9nblggh4txvb)
-  - Follow the [Explanatory video](https://youtu.be/d0dHdOfjhRA) to port the Chrome extension from `dist/chrome` into a `Edge` supported extension
+  - Follow the [Explanatory video](https://youtu.be/d0dHdOfjhRA) to port the Chrome extension from `dist/chrome` into an `Edge` supported extension
 
 
 Testing
@@ -68,7 +68,7 @@ Install [xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml) dis
 How to Contribute
 -------------
 If you would like to contribute to the development of this extension, please [contact the developers](http://www.aossie.org/#contact).
-In order to get started with the contribution, please refer to:
+In order to get started with the contribution, please refer to
 [Contribute.md](https://gitlab.com/aossie/MindTheWord/blob/master/CONTRIBUTE.md)
 
 * [Google Summer of Code](GoogleSummerOfCode.md) grants are available every year. If you would like to apply, it is never too early to [contact us](http://www.aossie.org/#contact).
