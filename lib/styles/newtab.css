@@ -1,0 +1,533 @@
+body {
+    text-align: center;
+    overflow: hidden;
+    letter-spacing: 0.7px;
+}
+
+.bottom-right {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+}
+.bottom-left {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+}
+.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.bottom-middle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin: 15px;
+    width: 50%;
+    transform: translateX(-50%);
+}
+
+.middle {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%);
+}
+
+#search-bar {
+    background-color: transparent;
+    height: 30px;
+    padding: 0px 10px;
+    min-width: 600px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+.hidden{
+    display: none;
+}
+#search-bar .dropdown-menu{
+    background-color: rgba(15, 15, 15, 0.9);
+    color: #fff;
+}
+.search-icon {
+    height: 30px;
+    width: 30px;
+    margin: auto 0px;
+    display: inline;
+    margin: auto 0px;
+}
+
+#search-bar>* {
+    border: none;
+    height: 60px;
+    background-color: transparent;
+}
+
+#search-bar>input {
+    border: none;
+    box-shadow: none;
+    padding-bottom: 10px;
+    color: #fff;
+    font-size: 28px;
+    letter-spacing: 0.8px;
+}
+
+.apps-group-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.middle .dropdown-toggle {
+    background: transparent;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+.middle .dropdown-toggle>div {
+    width: 27px;
+    height: 27px;
+    margin: auto;
+}
+
+.middle .input-group-addon, .middle .dropdown {
+    display: flex;
+    width: 40px;
+    outline: none;
+}
+
+.middle .input-group-addon>*, .middle input, .middle .dropdown>* {
+    margin: auto;
+}
+
+.middle input::placeholder {
+    color: #fff;
+}
+
+.modal-dialog-centered {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: calc(100% - (.5rem * 2))
+}
+.modal{
+    overflow: hidden;
+}
+.modal-title{
+    font-weight: 400;
+}
+.modal-body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-bottom: solid rgba(255, 255, 255, .1);
+    border-top: solid rgba(255, 255, 255, .1);
+}
+.modal-header, .modal-footer{
+    border: none;
+}
+
+#customiseModal .modal-body>* {
+    height: 117px;
+    width: calc(33% - 8px);
+    display: inline-block;
+    margin: 6px 0 0 8px;
+}
+
+.customiseModal {
+    min-height: 400px;
+    max-height: 400px;
+    overflow: hidden !important;
+}
+
+#customiseBtn>* {
+    margin: auto;
+}
+
+#customiseBtn {
+    width: 57px;
+    height: 57px;
+    display: flex;
+}
+
+.modal-content {
+    margin: auto;
+    width: -webkit-fill-available;
+    background-color: rgba(15, 15, 15, 0.9);
+    color: #fff;
+}
+
+.bgCollectionTile {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.bgCollectionTile .bg {
+    width: 100%;
+    height: 100%;
+}
+
+.background-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.middle .dropdown-item {
+    height: 32px;
+    width: 120px;
+    margin: 0px 15px;
+    display: flex;
+}
+
+.dropdown-item>* {
+    margin: auto 0px;
+}
+
+.middle form {
+    border-bottom: 2px solid #fff;
+}
+
+.dropdown-item .background-image {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.bgCollectionTile .title {
+    background-color: rgba(32, 33, 36, 0.71);
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    color: #FFF;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 32px;
+    overflow: hidden;
+    padding: 8px 16px;
+    position: absolute;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+}
+
+#clock {
+    font-size: 1050%;
+    letter-spacing: -5px;
+}
+
+.top-left #menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.top-left #menu>* {
+    height: 50px;
+    width: 50px;
+}
+
+.top-left #menu>img:hover {
+    transform: scale(1.3);
+}
+#quick-links  {
+    margin-top: 40px;
+    display: inline-block;
+}
+#quick-links .tile {
+    height: 112px;
+    width: 112px;
+    display: inline-block;
+}
+#quick-links .tile>*{
+    text-decoration: none !important;
+}
+#quick-links .tile>img {
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    background-color: #fff;
+    border: 5px #fff;
+}
+
+.quick-link-name {
+    color: #fff;
+    text-align: center;
+    margin: 10px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*
+A dropdown menu that covers the content
+Note: MUST be placed inside a relative position element (works with .material-form-field)
+Expected html:
+<ul class="material-dropdown">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+...
+</ul>
+*/
+
+.material-dropdown {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background: #fff;
+    color: #000;
+    z-index: 1000;
+    transition: 0.2s ease-in height, step-end box-shadow 0.2s;
+    -moz-transition: 0.2s ease-in height, step-end box-shadow 0.2s;
+    -webkit-transition: 0.2s ease-in height, step-end box-shadow 0.2s;
+}
+
+.material-dropdown.material-dropdown-open {
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.material-dropdown li {
+    padding: 10px;
+    cursor: default;
+    user-select: none;
+}
+
+.material-dropdown li:hover {
+    background-color: #e8eaf6;
+}
+
+.material-dropdown li.material-dropdown-selected {
+    background-color: #9fa8da;
+}
+
+/* A material design form field */
+
+.material-form-field {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    position: relative;
+    display: block;
+    color: #fff;
+    padding: 25px 0 10px 0;
+}
+
+.material-form-field::after {
+    content: "\00A0";
+    display: block;
+    color: #d50000;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.material-form-field .material-form-field-label {
+    position: absolute;
+    display: block;
+    top: 35px;
+    left: 0px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    pointer-events: none;
+    cursor: text;
+}
+
+.material-form-field input {
+    padding: 10px 0 10px 0;
+    display: block;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    outline: none;
+}
+
+.material-form-field input:invalid {
+    outline: none;
+    box-shadow: none;
+}
+
+.material-form-field input:valid~.material-form-field-label, .material-form-field input:focus~.material-form-field-label {
+    top: 10px;
+    font-size: 12px;
+}
+
+.material-form-field input:focus {
+    outline: none;
+    color: #fff;
+    padding-bottom: 8px;
+    border-bottom-width: 3px;
+    border-bottom-color: #fff;
+}
+
+.material-form-field input:focus~.material-form-field-label {
+    color: #fff;
+}
+
+.material-form-field input:focus~.material-dropdown {
+    /* If you want to animate this you will need to use some js to calculate it Optionally, you can simply display:block/none */
+    height: 228px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    transition: 0.2s ease-out height, step-start box-shadow 0.2s;
+    -moz-transition: 0.2s ease-out height, step-start box-shadow 0.2s;
+    -webkit-transition: 0.2s ease-out height, step-start box-shadow 0.2s;
+}
+
+.material-form-field.material-form-field-invalid {
+    color: #d50000;
+}
+
+.material-form-field.material-form-field-invalid::after {
+    content: attr(data-validationError);
+}
+
+.material-form-field.material-form-field-invalid input:focus~.material-form-field-label {
+    color: #d50000;
+}
+
+.container {
+    width: 400px;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+#quickLinksModal .modal-content{
+    width: 350px;
+}
+#quickLinksModal .modal-body{
+    padding: 0px 15px !important;
+}
+.quickLinks-icon{
+    height: 45px;
+    width: 45px;
+    margin: auto;
+    background-color: #fff;
+    background-size: 25px;
+    border: solid 5px #fff;
+    border-radius: 100%;
+}
+#services-container{
+    overflow: scroll;
+    max-height: 100%;
+    width: -webkit-fill-available;
+    display: none;
+    position: absolute;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 200px 50px 50px 180px;
+    padding-top: 100px;
+    bottom: 0px;
+}
+#services-container a{
+    color: #fff;
+    text-decoration: underline;
+}
+#newsFormApi .background-image{
+    height: 100px;
+    min-width: 100px;
+    border-radius: 10px;
+}
+#services-container .headlines{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+#services-container .headlines>*{
+    margin: 10px;
+    color: #fff;
+}
+#services-container h3{
+    font-size: 20px;
+}
+#services-container h4{
+    font-size: 16px;
+}
+#services-container .article{
+    width: calc(50% - 10px);
+    padding: 20px;
+    margin: 0 5px 10px 5px;
+    background-color: rgba(15, 15, 15, 0.9);
+    color: #fff;
+    display: flex;
+}
+#services-container .article .background-image{
+    width: -webkit-fill-available;
+}
+#newsApiForm{
+    display: none;
+    width: 70%;
+    max-width: 600px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+#services-container .api-reference{
+    font-size: 16px;
+    margin-top: 50px;
+    color: #fff;
+    font-weight: 500;
+}
+.stats-toggle{
+    background-color: rgba(15, 15, 15, 0.9);
+    color: #fff;
+    padding: 20px; 
+}
+.stats-toggle > div{
+    display: flex;
+}
+#statistics-container{
+    display: none;
+    margin: 0px auto;
+    width: 70%;
+}
+#return-to-original-layout{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: flex;
+}
+#wordsTranslatedArea{
+    width: 70%;
+    height: auto;
+    margin-bottom: 120px;
+}
+.loader {
+    display: none;
+    border: transparent;
+    border-radius: 50%;
+    border-top: 2px solid #fff;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
