@@ -1,0 +1,147 @@
+<html ng-app="MTWNewTab">
+
+<head>
+    <title>New Tab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mind the Word">
+    <meta name="author" content="Kartik Singhal">
+    <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/newtab.css">
+    <script src="../assets/js/toggle.js"></script>
+    <script src="../assets/js/Popper.js"></script>
+</head>
+
+<body ng-controller="NewTabCtrl as newTabCtrl" style="background-image: url('{{newTabCtrl.backgroundImage}}')" class="background-image">
+    <div class="middle">
+        <div id="default">
+            <form method="get" action="https://google.com/search/" autocomplete="off">
+                <div class="input-group" id="search-bar">
+                    <span class="input-group-addon"><img src="../assets/img/search.png" class="search-icon" /></span>
+                    <input type="text" name="q" class="form-control" placeholder="Search {{newTabCtrl.searchEngineName}}" aria-describedby="basic-addon1">
+                    <a class="dropdown">
+                        <div class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <div class="background-image" style="background-image: url('../assets/img/{{newTabCtrl.searchEngineName}}IconWhite.png')">
+                            </div>
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li ng-repeat="listData in newTabCtrl.searchEngineOptions">
+                                <div class="dropdown-item" ng-click="newTabCtrl.changeSearchEngine(listData.name)">
+                                    <div class="background-image" style="background-image: url('{{listData.icon}} ')">
+                                    </div>
+                                    <span style="margin-left: 5px;">{{listData.name}}</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+            </form>
+            <div id="quick-links">
+                <div class="tile" id="news-btn">
+                    <div class="background-image quickLinks-icon" style="background-image: url('../assets/img/news.png')"></div>
+                    <div class="quick-link-name">News</div>
+                </div>
+                <div class="tile" data-toggle="modal" data-target="#quickLinksModal">
+                    <div class="background-image quickLinks-icon" style="background-image: url('../assets/img/plus.png')" style="background-size: 15px;"></div>
+                    <div class="quick-link-name">Add shortcut</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="services-container">
+        <div id="return-to-original-layout">
+            <div class="background-image" style="background-image: url('../assets/img/back_btn.png'); height: 4vw; width: 4vw;;"></div>
+            <div style="color: #fff; font-size: 25px; margin: auto;">Back to home</div>
+        </div>
+        <div id="newsApiForm">
+            <div class="material-form-field">
+                <input type="text" id="newsApiKeyInput" />
+                <label class="material-form-field-label">NewApiKey</label>
+            </div>
+            <button type="button" class="btn btn-primary" id="submitNewApiKey">Submit</button>
+            <div class="api-reference">Visit <a href="https://newsapi.org/" target="_blank">NewApi</a> to get a free api key.
+            </div>
+        </div>
+        <div class="loader"></div>
+        <div id="statistics-container">
+            <canvas id="wordsTranslatedArea"></canvas>
+            <canvas id="languageDistribution"></canvas>
+            <h3 style='color: #fff; display: block' id='no-stats-indicator'>No translations yet! Get a free yandex api key now.</h3>"
+        </div>
+    </div>
+    <div class="bottom-left">
+        <div class="stats-toggle">
+            <div ng-if="newTabCtrl.showStatisticsPopup">
+                View your progress with MindTheWord
+                <div class="background-image" style="background-image: url('../assets/img/48.png'); width: 20px;height: 20px; margin-left: 5px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right" id="customiseBtn">
+        <img src="../assets/img/edit.png" data-toggle="modal" data-target="#customiseModal" />
+    </div>
+    <div id="quickLinksModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    Add Shortcut
+                </div>
+                <div class="modal-body">
+                    <div class="material-form-field">
+                        <input type="text" id="quicklink-name-input" />
+                        <label class="material-form-field-label">Name</label>
+                    </div>
+                    <div class="material-form-field">
+                        <input type="text" id="quicklink-url-input" />
+                        <label class="material-form-field-label">URL</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-default" ng-click="newTabCtrl.addQuickLink()">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background Customisation Modal -->
+    <div id="customiseModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content" ng-repeat="data in newTabCtrl.backgroundConfigData">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{data.header}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div ng-repeat="collection in data.result">
+                        <div ng-if="data.type==='collectionList'" ng-click="newTabCtrl.changeBackgroundImage(collection.src)" class="bgCollectionTile">
+                            <div class="bg background-image" style="background-image: url('{{collection.src}}')"></div>
+                        </div>
+                        <div ng-if="data.type==='wallpaperList'" ng-click="newTabCtrl.changeBackgroundConfigData('collectionList', collection.name+'Collection')" class="bgCollectionTile">
+                            <div class="bg background-image" style="background-image: url('{{collection.src}}')"></div>
+                            <div class="title">
+                                {{collection.name}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-if="data.type==='collectionList'" ng-click="newTabCtrl.changeBackgroundConfigData('wallpaperList')">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-info" style="display: none;">
+        <strong>Info!</strong><span></span>
+    </div>
+    <div class="alert alert-warning" style="display: none;">
+        <strong>Warning!</strong> <span></span>
+    </div>
+    <script src="../newtab.js"></script>
+</body>
+
+</html>

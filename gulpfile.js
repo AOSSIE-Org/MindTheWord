@@ -28,6 +28,15 @@ gulp.task('bundle-options', function() {
     .pipe(gulp.dest('./lib'));
 });
 
+gulp.task('bundle-newtab', function() {
+  return gulp.src('./lib/scripts/controllers/newtab.js')
+    .pipe(jspm({
+      selfExecutingBundle: true
+    }))
+    .pipe(rename('newtab.js'))
+    .pipe(gulp.dest('./lib'));
+});
+
 gulp.task('bundle-popup', function() {
   return gulp.src('./lib/scripts/controllers/popup.js')
     .pipe(jspm({
@@ -55,9 +64,10 @@ gulp.task('bundle-content', function() {
     .pipe(gulp.dest('./lib'));
 });
 
-gulp.task('watch', ['bundle-options', 'bundle-popup', 'bundle-content', 'bundle-event'], function() {
+gulp.task('watch', ['bundle-options', 'bundle-popup', 'bundle-newtab', 'bundle-content', 'bundle-event'], function() {
   gulp.watch('./lib/scripts/controllers/options.js', ['bundle-options']);
   gulp.watch('./lib/scripts/controllers/popup.js', ['bundle-popup']);
+  gulp.watch('./lib/scripts/controllers/newtab.js', ['bundle-newtab']);
   gulp.watch('./lib/scripts/mtw.js', ['bundle-content']);
   gulp.watch('./lib/scripts/eventPage.js', ['bundle-event']);
   gulp.watch('./lib/scripts/services/*.js', ['bundle-content', 'bundle-event']);
@@ -88,14 +98,14 @@ gulp.task('copy-dist', function () {
 
 gulp.task('build', function() {
   runSequence('clean', 'esLint', 'compress-images',
-    ['bundle-content', 'bundle-options', 'bundle-event',
+    ['bundle-content', 'bundle-options', 'bundle-newtab', 'bundle-event',
       'bundle-popup'], 'minify', 'copy-dist', 'replace-secondary', 'copy-secondary');
 });
 
 
 gulp.task('local-build', function() {
   runSequence('clean',
-    ['bundle-content', 'bundle-options', 'bundle-event',
+    ['bundle-content', 'bundle-options', 'bundle-newtab', 'bundle-event',
       'bundle-popup']);
 });
 
