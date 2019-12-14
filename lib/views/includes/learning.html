@@ -5,9 +5,6 @@
         <input type="file" id="savedTrans-file" style="display: none">
       <div class="panel-heading">
         <span data-translate="savedTranslations">Saved Translations</span>
-        <button ng-disabled="opctrl.savedTranslationList.length === 0" class="btn btn-warning" ng-click="opctrl.backupSavedTranslations()"
-          style="padding: 2px;display: inline-block;font-size: 11px;">Download</button>
-        <button class="btn btn-primary" style="padding: 2px; display: inline-block;font-size: 11px;" data-translate="restore" ng-click="opctrl.restoreSavedTranslations()">Restore</button>
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="User can save translations using the context menu and can even limit the translations to this list only"></span>
         <button type="button" data-toggle="modal" data-target="#savedTranslationsModal" class="btn btn-warning pull-right btn-xs" style="margin-right: 5px">
           <span data-translate="videoTutorial">Video Tutorial</span>
@@ -57,10 +54,7 @@
     <div id = "learnt-words" class="panel panel-success list-panel">
       <div class="panel-heading">
         <span data-translate="learntWords">Learnt Words</span>
-        <button ng-disabled="opctrl.learntWords.length === 0" class="btn btn-warning" ng-click="opctrl.backupLearntWords()"
-          style="padding: 2px;display: inline-block;font-size: 11px;">Download</button>
         <input type="file" id="learnt-file" style="display: none">
-        <button class="btn btn-primary" style="padding: 2px;display: inline-block; font-size: 11px;" ng-click="opctrl.restoreLearntWords()">Restore</button>
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="The user can mark the words he/she knows as learnt. These words won't be translated."></span>
         <button type="button" data-toggle="modal" data-target="#learntWordsModal" class="btn btn-warning pull-right btn-xs" style="margin-right: 5px">
           <span data-translate="videoTutorial">Video Tutorial</span>
