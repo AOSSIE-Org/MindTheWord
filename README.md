@@ -28,14 +28,14 @@ Read more in [Description.md](Description.md).
 9. `gulp build`
 10. Loading in the respective browsers
 
-_Note: The above installation instructions may require the super user permissions, and hence `sudo`. You might also consider installing `gulp` locally as the latest versions require to be installed to the local repo._
+_Note: The above installation instructions may require the superuser permissions, and hence `sudo`. You might also consider installing `gulp` locally as the latest versions require to be installed to the local repo._
 
 #### Loading in Google Chrome
  - Open Chrome and go to `chrome://extensions`
  - Enable "Developer mode"
  - Drag  `dist/chrome` folder into the browser or click "Load unpacked extension" and select the `dist/chrome` folder.
 
- Note: Recent versions of chrome _(precisely after chrome 73)_ have shown CORS error in the development environment. This can be overcomed by launching chrome with `google-chrome --user-data-dir --disable-web-security`. If using chromium or any other distro of chrome, use the same flags. Please ensure that while using this flag, all instances of chrome have to be closed.
+ Note: Recent versions of chrome _(precisely after chrome 73)_ have shown CORS error in the development environment. This can be overcome by launching chrome with `google-chrome --user-data-dir --disable-web-security`. If using chromium or any other distro of chrome, use the same flags. Please ensure that while using this flag, all instances of chrome have to be closed.
 
 #### Loading in Firefox
  - Open Firefox and type `about: debugging` in the address bar
