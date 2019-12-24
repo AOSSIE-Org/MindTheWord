@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mind the Word">
     <meta name="author" content="Bruno Woltzenlogel Paleo">
-
+    <script src="../assets/js/Popper.js"></script>
     <script src="../options.js"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../assets/css/google-fonts.css">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap-tour.min.css">
@@ -156,21 +156,12 @@
         <div class="tab-pane" id="contribute">
           <ng-include src="'includes/contribute.html'" onload="opctrl.setup()"></ng-include>
         </div>
-        <div class="tab-pane" id="troubleshooting">
-          <ng-include src="'includes/troubleshooting.html'" onload="opctrl.setup()"></ng-include>
-        </div>
       </div>
       <div id="status" class="fixed-bottom"></div>
     </div>
     </main>
     
   <ng-include src="'includes/footer.html'"></ng-include>
-  <script>
-   $(document).ready(function(){
-      $('[data-toggle="tab"]').tooltip();
-   });
-   
-  </script>
   <script src="../assets/js/jquery.menu-aim.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/tour.js"></script>
