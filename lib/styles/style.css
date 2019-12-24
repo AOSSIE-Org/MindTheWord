@@ -347,10 +347,15 @@ Top Navigation
   .cd-top-nav {
     height: 100%;
   }
+  .cd-top-nav .active > a {
+    box-shadow: 0 3px #1784c7;
+    background-color: #4c5359;
+  }
   .cd-top-nav a {
     display: block;
     font-size: 1.6rem;
     color: #ffffff;
+    height: 93%;
   }
   .cd-top-nav > li {
     display: inline-block;
@@ -365,11 +370,6 @@ Top Navigation
   }
   .cd-top-nav img {
     display: block;
-  }
-}
-@media only screen and (min-width: 1170px) {
-  .cd-top-nav li:not(.has-children) a:hover {
-    color: #1784c7;
   }
 }
 
