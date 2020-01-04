@@ -64,33 +64,54 @@
         margin-bottom: -3px;
 
       }
-
+      #appLoader{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: 60px
+      }
+      #appLoader .path {
+        -webkit-animation: dash 1s ease-in-out infinite;
+        animation: dash 1s ease-in-out infinite;
+      }
+      .loader{
+        display: inline-flex;
+        vertical-align: middle;
+        margin-left: 30px;
+      }
     </style>
   </head>
 
   <body ng-controller="OptionCtrl as opctrl">
-      <header class="cd-main-header">
-         
-          <a class="cd-logo" href="https://gitlab.com/aossie/MindTheWord">
-            <img alt="Brand" src="../assets/img/22.png">
-          </a>
-          <a class="cd-logo" href="https://gitlab.com/aossie/MindTheWord" data-translate='appName'><b><h2 style="color:#ffffff;">Mind The Word</h2></b></a>
-        <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+    <div ng-if="opctrl.appLoader" id="appLoader" class="loader">
+      <svg class="circular" viewBox="25 25 50 50">
+        <circle stroke="#008744" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+      </svg>
+    </div>
 
-       <nav class="cd-nav">
-        <ul class="cd-top-nav">
-            <li>
-                <a id="statistics-nav" href="#statistics" data-toggle="tab" data-translate="statistics">Statistics</a>
-            </li>
-            <li>
-                <a id="contribute-nav" href="#contribute" data-toggle="tab" data-translate="contribute">Contribute</a>
-            </li>
-            <li>
-                <a id = "mtwTakeTour" href="#">Take Tour</a>
-            </li>          
-        </ul>
-       </nav>
-      </header>
+    <header class="cd-main-header">
+        <a class="cd-logo" href="https://gitlab.com/aossie/MindTheWord">
+          <img alt="Brand" src="../assets/img/22.png">
+        </a>
+        <a class="cd-logo" href="https://gitlab.com/aossie/MindTheWord" data-translate='appName'><b><h2 style="color:#ffffff;">Mind The Word</h2></b></a>
+      <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+
+      <nav class="cd-nav">
+      <ul class="cd-top-nav">
+          <li>
+              <a id="statistics-nav" href="#statistics" data-toggle="tab" data-translate="statistics">Statistics</a>
+          </li>
+          <li>
+              <a id="contribute-nav" href="#contribute" data-toggle="tab" data-translate="contribute">Contribute</a>
+          </li>
+          <li>
+              <a id = "mtwTakeTour" href="#">Take Tour</a>
+          </li>          
+      </ul>
+      </nav>
+    </header>
 
     <main class="cd-main-content">
      <nav class="cd-side-nav">
