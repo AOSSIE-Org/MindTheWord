@@ -74,6 +74,12 @@ svg {
         <span>Activity Progress</span>
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip"
          data-placement="bottom" title="Helps keep a watch on your learning activity"></span>
+         <div ng-if="opctrl.activityChartLoaderVisible" id="activityChartLoader" class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+              <circle stroke="#0057e7" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+            </svg>
+        </div>
+
     </div>
     <div class="panel-home">
         <div id="activity-progress-chart">

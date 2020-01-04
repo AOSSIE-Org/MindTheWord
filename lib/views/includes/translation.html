@@ -8,6 +8,11 @@
 <div class="panel panel-success" data-ng-init="opctrl.setTSExample()">
   <div class="panel-heading">
     <span>Translation Settings Example</span>
+    <div ng-if="opctrl.tsExampleLoader" id="tsExampleLoader" class="loader">
+      <svg class="circular" viewBox="25 25 50 50">
+        <circle stroke="#008744" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+      </svg>
+    </div>
     <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom"
      title="Get complete idea on how your translated webpage would look based on the settings you choose."></span>
   </div>
