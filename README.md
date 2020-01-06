@@ -54,9 +54,13 @@ Testing
 3. **[optional]** `export YANDEX_KEY="<yandex translation key>"`
 4. `npm test`
 
-MindtheWord is using [Prettier](https://prettier.io), which is an opinionated code formatter. To check your code styles with Prettier, run
+MindtheWord uses [Prettier](https://prettier.io), which is an opinionated code formatter. To check if your files are formatted, run
 1. `npm install -g prettier`
-2. `prettier --check "lib/assets/js/main.js", "lib/scripts/services/**/*.js", "lib/scripts/utils/**/*.js", "test/**/*.js"`
+2. `prettier --check -- lib/assets/js/main.js lib/scripts/**/*.js test/**/*.js`
+
+To beautify your code with prettier, execute 
+1. `npm run prettier`
+
 ### Visualisation of tests [optional]
 
 5. `npm install mochawesome`

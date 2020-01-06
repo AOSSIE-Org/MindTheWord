@@ -6,7 +6,8 @@
   "license": "",
   "scripts": {
     "test": "mocha test/webdriver.js",
-    "visualise": "mocha test/webdriver.js --reporter mochawesome --reporter-options autoOpen=true"
+    "visualise": "mocha test/webdriver.js --reporter mochawesome --reporter-options autoOpen=true",
+    "prettier": "prettier --write -- lib/assets/js/main.js lib/scripts/**/*.js test/**/*.js"
   },
   "jspm": {
     "dependencies": {
