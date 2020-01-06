@@ -35,5 +35,5 @@ module.exports = {
   createdPatternsDiv: createdPatternsDiv,
   deleteFirstPattern: deleteFirstPattern,
   deleteSecondPattern: deleteSecondPattern,
-  deleteThirdPattern: deleteThirdPattern
+  deleteThirdPattern: deleteThirdPattern,
 };

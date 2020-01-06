@@ -1,4 +1,3 @@
-
 const xpath_ENDTOUR = '//*[@id="step-0"]/div[3]/button',
   xpath_WELCOME = '//*[@id="step-0"]/div[3]/div/button[2]',
   xpath_TRANSLATION = '//*[@id="step-1"]/div[3]/div/button[2]',
@@ -36,5 +35,5 @@ module.exports = {
   nextQuiz: xpath_QuizTab,
   nextStats: xpath_statsTab,
   nextContribute: xpath_ContributeTab,
-  nextTourFinish: xpath_FinalTourEnd
+  nextTourFinish: xpath_FinalTourEnd,
 };
