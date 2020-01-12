@@ -6,6 +6,11 @@
       <div class="panel-heading">
         <span data-translate="savedTranslations">Saved Translations</span>
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="User can save translations using the context menu and can even limit the translations to this list only"></span>
+        <div ng-if="opctrl.tsExampleLoader" id="tsExampleLoader" class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle stroke="#99c0ff" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+          </svg>
+        </div>
         <button type="button" data-toggle="modal" data-target="#savedTranslationsModal" class="btn btn-warning pull-right btn-xs" style="margin-right: 5px">
           <span data-translate="videoTutorial">Video Tutorial</span>
         </button>
@@ -56,6 +61,11 @@
         <span data-translate="learntWords">Learnt Words</span>
         <input type="file" id="learnt-file" style="display: none">
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="The user can mark the words he/she knows as learnt. These words won't be translated."></span>
+        <div ng-if="opctrl.tsExampleLoader" id="tsExampleLoader" class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle stroke="#005028" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+          </svg>
+        </div>
         <button type="button" data-toggle="modal" data-target="#learntWordsModal" class="btn btn-warning pull-right btn-xs" style="margin-right: 5px">
           <span data-translate="videoTutorial">Video Tutorial</span>
         </button>

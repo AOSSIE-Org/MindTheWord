@@ -4,6 +4,11 @@
       <div class="panel-heading">
         <span data-translate="blacklistWebsites">Blacklist Websites</span>
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="Content in these websites will not be translated"></span>
+        <div ng-if="opctrl.tsExampleLoader" id="tsExampleLoader" class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle stroke="#f03e26" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+          </svg>
+        </div>
         <button type="button" data-toggle="modal" data-target="#blacklistWebsitesModal" class="btn btn-warning pull-right btn-xs" style="margin-right: 5px">
           <span data-translate="videoTutorial">Video Tutorial</span>
         </button>
@@ -35,6 +40,11 @@
       <div class="panel-heading">
         <span data-translate="blacklistWords">Blacklist Words</span>
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="These words will not be translated"></span>
+        <div ng-if="opctrl.tsExampleLoader" id="tsExampleLoader" class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle stroke="#f03e26" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+          </svg>
+        </div>
         <button type="button" data-toggle="modal" data-target="#blacklistWordsModal" class="btn btn-warning pull-right btn-xs" style="margin-right: 5px">
           <span data-translate="videoTutorial">Video Tutorial</span>
         </button>
@@ -89,3 +99,4 @@
     </div>
   </div>
 </div>
+
