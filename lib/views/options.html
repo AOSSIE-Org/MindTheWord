@@ -1,150 +1,160 @@
 <html ng-app="MTWOptions">
 
-  <head>
-    <meta charset="utf-8">
-    <title>Mind the Word</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mind the Word">
-    <meta name="author" content="Bruno Woltzenlogel Paleo">
-    <script src="../assets/js/Popper.js"></script>
-    <script src="../options.js"></script>
+<head>
+  <meta charset="utf-8">
+  <title>Mind the Word</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mind the Word">
+  <meta name="author" content="Bruno Woltzenlogel Paleo">
+  <script src="../assets/js/Popper.js"></script>
+  <script src="../options.js"></script>
 
-    <link rel="stylesheet" href="../assets/css/google-fonts.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap-tour.min.css">
-    <script src="../assets/js/jquery-3.3.1.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/d3.v4.js"></script>
-    <script src="../assets/js/bootstrap-tour.min.js"></script>
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/reset.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="../styles/style.css"> <!-- Resource style -->
-    <script src="../assets/js/modernizr.js"></script>
-    <script src="../../assets/js/Chart.bundle.js"></script>
-    <script src="../../assets/js/Chart.bundle.min.js"></script>
-    <script src="../../assets/js/Chart.js"></script>
-    <script src="../../assets/js/Chart.min.js"></script><!-- Modernizr -->
-    
-    <script src="../assets/js/jquery.hovercard.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/google-fonts.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap-tour.min.css">
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/d3.v4.js"></script>
+  <script src="../assets/js/bootstrap-tour.min.js"></script>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="../styles/style.css"> <!-- Resource style -->
+  <script src="../assets/js/modernizr.js"></script>
+  <script src="../../assets/js/Chart.bundle.js"></script>
+  <script src="../../assets/js/Chart.bundle.min.js"></script>
+  <script src="../../assets/js/Chart.js"></script>
+  <script src="../../assets/js/Chart.min.js"></script><!-- Modernizr -->
 
-    <style type="text/css">
-      .animate-shadow-1{
-        box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-        -webkit-transition: box-shadow 1s ease;
-        -o-transition: box-shadow 1s ease;
-        transition: box-shadow 1s ease;
-      }
-      .animate-shadow-1:hover{
-        box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
-      }
-      .info-box{
-        height: 80px;
-        display: flex;
-        cursor: default;
-        background-color: #fff;
-        position: relative;
-        overflow: hidden;
-        margin-bottom: 30px;
-        width: 23%;
-        padding: 20px;
-        margin-right: 20px;
-        float:left;
-      }
-      .staLabel{
-        color: white;
-        font-weight: bold;
-        text-decoration: underline;
+  <script src="../assets/js/jquery.hovercard.min.js"></script>
 
-      }
-      .sidebarIcons{
-        margin-right:15px;
-        width: 16px;
-        height: 16px;
-        margin-bottom: -3px;
+  <style type="text/css">
+    .animate-shadow-1 {
+      box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+      -webkit-transition: box-shadow 1s ease;
+      -o-transition: box-shadow 1s ease;
+      transition: box-shadow 1s ease;
+    }
 
-      }
-      #appLoader{
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        width: 60px
-      }
-      #appLoader .path {
-        -webkit-animation: dash 1s ease-in-out infinite;
-        animation: dash 1s ease-in-out infinite;
-      }
-      .loader{
-        display: inline-flex;
-        vertical-align: middle;
-        margin-left: 30px;
-      }
-    </style>
-  </head>
+    .animate-shadow-1:hover {
+      box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+    }
 
-  <body ng-controller="OptionCtrl as opctrl">
-    <div ng-if="opctrl.appLoader" id="appLoader" class="loader">
-      <svg class="circular" viewBox="25 25 50 50">
-        <circle stroke="#008744" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
-      </svg>
-    </div>
+    .info-box {
+      height: 80px;
+      display: flex;
+      cursor: default;
+      background-color: #fff;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 30px;
+      width: 23%;
+      padding: 20px;
+      margin-right: 20px;
+      float: left;
+    }
 
-    <header class="cd-main-header">
-        <a class="cd-logo" href="https://gitlab.com/aossie/MindTheWord">
-          <img alt="Brand" src="../assets/img/22.png">
-        </a>
-        <a class="cd-logo" href="https://gitlab.com/aossie/MindTheWord" data-translate='appName'><b><h2 style="color:#ffffff;">Mind The Word</h2></b></a>
-      <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+    .staLabel {
+      color: white;
+      font-weight: bold;
+      text-decoration: underline;
 
-      <nav class="cd-nav">
+    }
+
+    .nav-link a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+      background-color: #33383e;
+    }
+
+    .sidebarIcons {
+      margin-right: 15px;
+      width: 18px;
+      height: 18px;
+      margin-bottom: -4px;
+    }
+  </style>
+</head>
+
+<body ng-controller="OptionCtrl as opctrl">
+  <header class="cd-main-header">
+
+    <a class="cd-logo" href="https://gitlab.com/aossie/MindTheWord">
+      <img alt="Brand" src="../assets/img/22.png">
+    </a>
+    <a class="cd-logo" href="https://gitlab.com/aossie/MindTheWord" data-translate='appName'><b>
+        <h2 style="color:#ffffff;">Mind The Word</h2>
+      </b></a>
+    <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+
+    <nav class="cd-nav">
       <ul class="cd-top-nav">
-          <li>
-              <a id="statistics-nav" href="#statistics" data-toggle="tab" data-translate="statistics">Statistics</a>
-          </li>
-          <li>
-              <a id="contribute-nav" href="#contribute" data-toggle="tab" data-translate="contribute">Contribute</a>
-          </li>
-          <li>
-              <a id = "mtwTakeTour" href="#">Take Tour</a>
-          </li>          
+        <li>
+          <a id="statistics-nav" href="#statistics" data-toggle="tab" data-translate="statistics">Statistics</a>
+        </li>
+        <li>
+          <a id="contribute-nav" href="#contribute" data-toggle="tab" data-translate="contribute">Contribute</a>
+        </li>
+        <li>
+          <a id="mtwTakeTour" href="#">Take Tour</a>
+        </li>
       </ul>
-      </nav>
-    </header>
+    </nav>
+  </header>
 
-    <main class="cd-main-content">
-     <nav class="cd-side-nav">
-        <ul class="nav">
-          <li class="nav-link">
-              <a id="home-nav" href="#home" data-toggle="tab" data-placement="right" title="Home"><img alt="Brand" src="../assets/img/home.png" class="sidebarIcons">Home</a>
-          </li>
-          <li class="nav-link">
-            <a id="translation-settings-nav" href="#translation-settings" data-toggle="tab" data-translate="translation" data-placement="right" title="Language Translation Services"><img alt="Brand" src="../assets/img/translate.png" class="sidebarIcons">Translation</a>
-          </li>
-          <li class="nav-link">
-            <a id="blacklisting-nav" href="#blacklisting" data-toggle="tab" data-translate="blacklist" data-placement="right" title="Blacklist Websites, Blacklist Words, Automatic Blacklisting"><img alt="Brand" src="../assets/img/block.png" class="sidebarIcons">   Blacklist</a>
-          </li>
-          <li class="nav-link">
-            <a id="learning-nav" href="#learning" data-toggle="tab" data-translate="learning" data-placement="right" title="Saved Translations, Difficulty Buckets, Learnt words"><img alt="Brand" src="../assets/img/study.png" class="sidebarIcons">Learning</a>
-          </li>
-          <li class="nav-link">
-            <a id="advanced-settings-nav" href="#advanced-settings" data-toggle="tab" data-translate="advanced" data-placement="right" title="Color settings, Word configuration, Playback settings"><img alt="Brand" src="../assets/img/stting.png" class="sidebarIcons">Advanced</a>
-          </li>
-          <li class="nav-link">
-            <a id="backup-nav" href="#backup" data-toggle="tab" data-translate="backup" data-placement="right" title="Backup & Restore"><img alt="Brand" src="../assets/img/bkup.png" class="sidebarIcons">Backup</a>
-          </li>
-          <li class="nav-link">
-            <a id="quiz-nav" href="#quiz" data-toggle="tab" data-translate="quiz" data-placement="right" title="Quiz that tests knowledge of learnt new language words so far!"><img alt="Brand" src="../assets/img/quiz.png" class="sidebarIcons">Quiz</a>
-          </li>
-          <li class="nav-link">
-            <a id="hovercard-nav" href="#hovercard" data-toggle="tab" data-translate="hovercard" data-placement="right" title="Demonstration of various buttons on Hovercard"><img alt="Brand" src="../assets/img/td.png" class="sidebarIcons">Hovercard</a>
-          </li>
-        </ul>
+  <main class="cd-main-content">
+    <nav class="cd-side-nav">
+      <ul class="nav">
+        <li class="nav-link">
+          <a id="home-nav" href="#home" data-toggle="tab" data-placement="right" title="Home"><img alt="Brand"
+              src="../assets/img/home.svg" class="sidebarIcons">Home</a>
+        </li>
+        <li class="nav-link">
+          <a id="translation-settings-nav" href="#translation-settings" data-toggle="tab" data-placement="right"
+            title="Language Translation Services"><img alt="Brand" src="../assets/img/translate.svg"
+              class="sidebarIcons"><span data-translate="translation">Home</span></a>
+        </li>
+        <li class="nav-link">
+          <a id="blacklisting-nav" href="#blacklisting" data-toggle="tab" data-placement="right"
+            title="Blacklist Websites, Blacklist Words, Automatic Blacklisting"><img alt="Brand"
+              src="../assets/img/blacklist.svg" class="sidebarIcons"><span
+              data-translate="blacklist">Blacklist</span></a>
+        </li>
+        <li class="nav-link">
+          <a id="learning-nav" href="#learning" data-toggle="tab" data-placement="right"
+            title="Saved Translations, Difficulty Buckets, Learnt words"><img alt="Brand"
+              src="../assets/img/learning.svg" class="sidebarIcons"><span data-translate="learning">Learning</span></a>
+        </li>
+        <li class="nav-link">
+          <a id="advanced-settings-nav" href="#advanced-settings" data-toggle="tab" data-placement="right"
+            title="Color settings, Word configuration, Playback settings"><img alt="Brand"
+              src="../assets/img/settings.svg" class="sidebarIcons"><span data-translate="advanced">Advanced</span></a>
+        </li>
+        <li class="nav-link">
+          <a id="backup-nav" href="#backup" data-toggle="tab" data-placement="right" title="Backup & Restore"><img
+              alt="Brand" src="../assets/img/backup.svg" class="sidebarIcons"><span
+              data-translate="backup">Backup</span></a>
+        </li>
+        <li class="nav-link">
+          <a id="quiz-nav" href="#quiz" data-toggle="tab" data-placement="right"
+            title="Quiz that tests knowledge of learnt new language words so far!"><img alt="Brand"
+              src="../assets/img/quiz.svg" class="sidebarIcons"><span data-translate="quiz">Quiz</span></a>
+        </li>
+        <li class="nav-link">
+          <a id="hovercard-nav" href="#hovercard" data-toggle="tab" data-placement="right"
+            title="Demonstration of various buttons on Hovercard"><img alt="Brand" src="../assets/img/hovercard.svg"
+              class="sidebarIcons"><span data-translate="hovercard">Hovercard</span></a>
+        </li>
+      </ul>
 
-      </nav>
+    </nav>
 
-    
+
     <div class="content-wrapper">
       <div class="tab-content">
         <div class="tab-pane active" id="home">
@@ -180,12 +190,13 @@
       </div>
       <div id="status" class="fixed-bottom"></div>
     </div>
-    </main>
-    
+  </main>
+
   <ng-include src="'includes/footer.html'"></ng-include>
   <script src="../assets/js/jquery.menu-aim.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/tour.js"></script>
   <script src="../assets/js/lazy-scroll.min.js"></script>
-  </body>
+</body>
+
 </html>
