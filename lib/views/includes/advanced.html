@@ -4,6 +4,12 @@
       <div class="panel-heading">
         <span data-translate="colorSettings">Color Settings</span>
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="Set the color in which translations appear."></span>
+        <div ng-if="opctrl.tsExampleLoader" id="tsExampleLoader" class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle stroke="#99c0ff" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+          </svg>
+        </div>
+    
       </div>
       <style>
        p.big {
@@ -46,6 +52,7 @@
         <div class="input-group">
           <span class="input-group-addon" data-translate="textColor">Text Color</span>
           <input id="text-colorpicker" type="text" ng-model="opctrl.textColor" class="form-control"/>
+          
         </div>
         <br>
         <div class="input-group">
@@ -83,6 +90,12 @@
       <div class="panel-heading">
         <span data-translate="wordConfiguration">Word Configuration</span>
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="Configure word length and set n-grams"></span>
+        <div ng-if="opctrl.tsExampleLoader" id="tsExampleLoader" class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle stroke="#99c0ff" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+          </svg>
+        </div>
+    
       </div>
       <div class="panel-body" style="min-height: 216px">
         <form class="form-inline">
@@ -113,6 +126,12 @@
       <div class="panel-heading">
         <span data-translate="userDefinedTranslations">User Defined Translations</span>
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="Define translations for specific words. These words will override normal translations"></span>
+        <div ng-if="opctrl.tsExampleLoader" id="tsExampleLoader" class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle stroke="#99c0ff" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+          </svg>
+        </div>
+    
       </div>
       <div class="panel-body">
         <div class="input-group">
@@ -158,6 +177,12 @@
       <div class="panel-heading">
         <span data-translate="playbackSettings">Playback Settings</span>
         <span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-placement="bottom" title="Audio Settings for speaking translated words"></span>
+        <div ng-if="opctrl.tsExampleLoader" id="tsExampleLoader" class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle stroke="#99c0ff" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+          </svg>
+        </div>
+    
         <button type="button" data-toggle="modal" data-target="#playbackModal" class="btn btn-warning pull-right btn-xs" style="margin-right: 5px">
           <span data-translate="videoTutorial">Video Tutorial</span>
         </button>
@@ -206,6 +231,12 @@
     <div class="panel panel-danger">
       <div class="panel-heading">
         <span data-translate="dangerZone">Danger Zone</span>
+        <div ng-if="opctrl.tsExampleLoader" id="tsExampleLoader" class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle stroke="#008744" class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+          </svg>
+        </div>
+    
       </div>
       <ul class="list-group">
         <li class="list-group-item">
